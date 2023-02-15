@@ -1,7 +1,8 @@
 import "./App.scss";
+import RootNavigation from "./router/RootNavigation";
 
 function App() {
-  return <div>Hello Word!</div>;
+  return <RootNavigation />;
 }
 
 export default App;
