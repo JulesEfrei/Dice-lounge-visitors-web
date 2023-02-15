@@ -48,3 +48,11 @@ h1 {
 ```
 
 For components and pages, we put all these in the `src/components` folder (We can put the pages outside the `src/components` and create an `src/pages` folder if you prefer). For each folder inside the `components` folder, we have another one for the style (Ex: `src/components/atoms` with all `.jsx` files and `src/components/atoms/styles` with all `.scss` files).
+
+### Branches
+
+The `main` branch is the production branch. This means that we only push the released version of the application on it. It's this branch that will be deployed. 
+
+The `dev` branch is the development branch. We push new features on it and we test our application on this branch before merging it into the main branch. Generally, we only merge a branch to this one and we never push code directly on it.
+
+Then, we have `"features"` branch (Ex: Authentification, HomePage, Reservation, etc). These are feature branches. We code and push code only on these branches. When the feature is finished, we merge them to the `dev` branch to test them and approve them.
