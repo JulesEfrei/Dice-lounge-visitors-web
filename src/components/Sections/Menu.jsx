@@ -3,13 +3,16 @@ import { Link } from "react-router-dom";
 import styles from "./styles/menu.module.scss";
 
 function Menu() {
-  console.log("Menu");
-
   const [navItems, setNavItems] = useState([
-    { name: "Home", link: "/home", active: true },
-    { name: "Games", link: "/games", active: false },
-    { name: "Discussion", link: "/discution", active: false },
-    { name: "Account", link: "/account", active: false },
+    { name: "Home", link: "/home", icon: "/HomeIcon.svg", active: true },
+    {
+      name: "Discussion",
+      link: "/discution",
+      icon: "/MsgIcon.svg",
+      active: false,
+    },
+    { name: "Games", link: "/games", icon: "/DiceIcon.svg", active: false },
+    { name: "Account", link: "/account", icon: "/UserIcon.svg", active: false },
   ]);
 
   const [reload, setReload] = useState(0);
@@ -27,7 +30,6 @@ function Menu() {
   return (
     <>
       <div className={styles.navbar}>
-        {/* <p>{first}</p> */}
         {navItems.map((elm, index) => {
           return (
             <Link
@@ -36,7 +38,9 @@ function Menu() {
               className={`${styles.link} ${elm.active ? styles.active : ""}`}
               onClick={() => changeActive(index)}
             >
-              <div className={styles.img}></div>
+              <div className={styles.img}>
+                <img src={`./${elm.icon}`} alt={elm.name} />
+              </div>
               <p className={styles.text}>{elm.name}</p>
             </Link>
           );
