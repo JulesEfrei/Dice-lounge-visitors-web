@@ -4,8 +4,9 @@ import { Input } from "../Atoms/";
 function LoginPage() {
   const inputRef = useRef(null);
 
+  console.log(inputRef.current);
   useEffect(() => {
-    console.log(inputRef.current.value);
+    console.log(inputRef.current);
   }, [inputRef]);
 
   return (
@@ -15,9 +16,9 @@ function LoginPage() {
         name="password"
         placeholder="Password"
         label="Password"
-        type="text"
-        icon="./UserCercle.svg"
+        type="password"
         ref={inputRef}
+        value={inputRef.current ? inputRef.current.value : ""}
       />
     </>
   );

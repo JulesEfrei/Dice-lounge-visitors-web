@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./styles/input.module.scss";
 
 const Input = React.forwardRef(
-  ({ placeholder = "", label, icon, type, name }, ref) => {
+  ({ placeholder = "", label, icon, type, name, value }, ref) => {
     const [ownType, setOwnType] = useState(type);
     const [isVisible, setIsVisible] = useState(false);
 
@@ -16,6 +16,7 @@ const Input = React.forwardRef(
             name={name}
             placeholder={placeholder}
             ref={ref}
+            value={value}
             minLength={type === "password" ? 8 : undefined}
           />
           {type === "password" ? (
@@ -43,6 +44,7 @@ const Input = React.forwardRef(
             </button>
           ) : null}
         </div>
+        <p className={styles.errorMsg}>{name} is invalid!</p>
       </div>
     );
   }
