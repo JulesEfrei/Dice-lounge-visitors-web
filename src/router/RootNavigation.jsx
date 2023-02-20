@@ -4,7 +4,7 @@ import AuthNavigation from "./AuthNavigation";
 
 function RootNavigation() {
   //TO-DO => Test if the user is connected
-  const isConnected = true;
+  const isConnected = false;
 
   return <>{isConnected ? <AppNavigation /> : <AuthNavigation />}</>;
 }
