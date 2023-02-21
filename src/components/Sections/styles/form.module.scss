@@ -1,0 +1,27 @@
+@use "../../../utils/variables.scss";
+
+.container {
+  width: 100%;
+  form {
+    @include variables.flex(column, flex-start, center);
+    width: 100%;
+    padding: 20px 0;
+    row-gap: 1rem;
+
+    .button {
+      margin-top: 2rem;
+      background-color: variables.$primary-color;
+      border: none;
+      font-family: sans-serif;
+      font-size: 16px;
+      letter-spacing: 1px;
+      padding: 10px 100px;
+      border-radius: 10px;
+    }
+  }
+
+  .link {
+    font-family: sans-serif;
+    font-size: 14px;
+  }
+}
