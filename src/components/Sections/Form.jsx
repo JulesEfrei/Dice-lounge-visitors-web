@@ -15,15 +15,23 @@ function Form({ link, input, button }) {
         <form onSubmit={(e) => verifForm(e)}>
           {input.map((elm, index) => {
             return (
-              <Input
-                name={elm.name}
-                type={elm.type}
-                placeholder={elm.placeholder ? elm.placeholder : ""}
-                label={elm.label ? elm.label : null}
-                icon={elm.icon ? elm.icon : null}
-                ref={elm.ref}
-                key={`${elm.name}-${index}`}
-              />
+              <div key={`${elm.name}-${index}`} className={styles.wrapper}>
+                {elm.type !== "radio" ? (
+                  <Input
+                    name={elm.name}
+                    type={elm.type}
+                    placeholder={elm.placeholder ? elm.placeholder : ""}
+                    label={elm.label ? elm.label : null}
+                    icon={elm.icon ? elm.icon : null}
+                    ref={elm.ref}
+                  />
+                ) : (
+                  <div className={styles.radio}>
+                    <input type="radio" required name={elm.name} />
+                    <label htmlFor={elm.name}>{elm.label}</label>
+                  </div>
+                )}
+              </div>
             );
           })}
           <button className={styles.button} type="submit">
