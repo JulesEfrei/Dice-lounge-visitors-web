@@ -12,7 +12,7 @@
     margin-bottom: 5px;
   }
 
-  &:has(:invalid:not(:focus)) .errorMsg {
+  &:has(input:invalid:not(:focus)) .errorMsg {
     display: inline-block;
   }
 
@@ -35,16 +35,12 @@
     align-items: center;
     border: 1.5px solid transparent;
 
-    &:has(:focus) {
+    &:has(input:focus) {
       border-color: variables.$info-color;
     }
 
-    &:has(:invalid:not(:focus)) {
+    &:has(input:invalid:not(:focus)) {
       border-color: variables.$danger-color;
-    }
-
-    &:has(:valid:not(:focus):not([value=""])) {
-      border-color: variables.$success-color;
     }
 
     .icon {
