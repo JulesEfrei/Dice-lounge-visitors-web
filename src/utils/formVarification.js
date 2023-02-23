@@ -26,6 +26,14 @@ export function isEmail(email) {
   }
 }
 
+export function isDate(date) {
+  if (typeof date !== "undefined") {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 export function isPhone(tel) {
   if (typeof tel !== "undefined") {
     return tel.match(
@@ -45,6 +53,7 @@ const valueWithCheck = {
   password: isPassword,
   phone: isPhone,
   select: isSelect,
+  date: isDate,
 };
 
 export function verifForm(field) {

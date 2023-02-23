@@ -1,4 +1,7 @@
 import React, { useRef } from "react";
+import { useNavigate } from "react-router";
+import { ToastContainer } from "react-toastify";
+import { generateToast, verifForm } from "../../utils/formVarification";
 import { Form } from "../Sections/";
 import styles from "./styles/registerPage.module.scss";
 
@@ -10,6 +13,33 @@ function RegisterPage() {
   const password = useRef(null);
   const birthday = useRef(null);
   const phone = useRef(null);
+
+  const navigation = useNavigate();
+
+  const formVerification = (event) => {
+    event.preventDefault();
+    const result = verifForm({
+      name: firstName.current.value,
+      name: lastName.current.value,
+      name: userName.current.value,
+      email: email.current.value,
+      password: password.current.value,
+      date: birthday.current.value,
+      phone: phone.current.value,
+    });
+    if (result.success === true) {
+      navigation("/login");
+    } else if (result.error.length === 1) {
+      generateToast(
+        `${
+          result.error[0].charAt(0).toUpperCase() + result.error[0].slice(1)
+        } is invalid!`
+      );
+    } else {
+      console.log(result);
+      generateToast("Invalid form!");
+    }
+  };
 
   return (
     <>
@@ -76,8 +106,11 @@ function RegisterPage() {
           ]}
           link={{ to: "/login", content: "Already an account?" }}
           button="Create an account"
+          handdleSubmit={(event) => formVerification(event)}
         />
       </div>
+
+      <ToastContainer />
     </>
   );
 }
