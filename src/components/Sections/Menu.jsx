@@ -4,28 +4,17 @@ import styles from "./styles/menu.module.scss";
 
 function Menu() {
   const [navItems, setNavItems] = useState([
-    { name: "Home", link: "/home", icon: "/HomeIcon.svg", active: true },
+    { name: "Home", link: "/home", icon: "/HomeIcon.svg" },
     {
-      name: "Discussion",
-      link: "/discution",
+      name: "Forum",
+      link: "/forum",
       icon: "/MsgIcon.svg",
-      active: false,
     },
-    { name: "Games", link: "/games", icon: "/DiceIcon.svg", active: false },
-    { name: "Account", link: "/account", icon: "/UserIcon.svg", active: false },
+    { name: "Games", link: "/games", icon: "/DiceIcon.svg" },
+    { name: "Account", link: "/account", icon: "/UserIcon.svg" },
   ]);
 
-  const [reload, setReload] = useState(0);
-
-  const changeActive = (index) => {
-    const tt = reload + 1;
-    setReload(tt);
-    const temp = navItems;
-    temp.find((elm) => elm.active === true).active = false;
-    temp[index].active = true;
-    setNavItems(temp);
-    console.log(temp);
-  };
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
     <>
@@ -35,8 +24,10 @@ function Menu() {
             <Link
               key={`${elm.name}-${index}`}
               to={elm.link}
-              className={`${styles.link} ${elm.active ? styles.active : ""}`}
-              onClick={() => changeActive(index)}
+              className={`${styles.link} ${
+                activeIndex === index ? styles.active : ""
+              }`}
+              onClick={() => setActiveIndex(index)}
             >
               <div className={styles.img}>
                 <img src={`./${elm.icon}`} alt={elm.name} />
