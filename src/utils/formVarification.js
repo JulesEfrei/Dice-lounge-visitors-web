@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 export function isText(name) {
   if (typeof name !== "undefined") {
     return name.trim() !== "" && !name.match(/[0-9]/gm);
@@ -57,4 +59,16 @@ export function verifForm(field) {
   });
 
   return { success: result, error };
+}
+
+export function generateToast(text, type = "error", position = "top-right") {
+  toast[type](text, {
+    position: position,
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
 }

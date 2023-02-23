@@ -3,16 +3,11 @@ import styles from "./styles/form.module.scss";
 import { Input } from "../Atoms/";
 import { Link } from "react-router-dom";
 
-function Form({ link, input, button }) {
-  const verifForm = (event) => {
-    event.preventDefault();
-    console.log("Verification of form");
-  };
-
+function Form({ link, input, button, handdleSubmit }) {
   return (
     <>
       <div className={styles.container}>
-        <form onSubmit={(e) => verifForm(e)}>
+        <form onSubmit={(e) => handdleSubmit(e)}>
           {input.map((elm, index) => {
             return (
               <div key={`${elm.name}-${index}`} className={styles.wrapper}>
