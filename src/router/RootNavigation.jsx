@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import AppNavigation from "./AppNavigation";
 import AuthNavigation from "./AuthNavigation";
 
 function RootNavigation() {
-  //TO-DO => Test if the user is connected
-  const isConnected = true;
+  const [isConnected, setIsConnected] = useState(
+    localStorage.getItem("userData") ? true : false
+  );
 
-  return <>{isConnected ? <AppNavigation /> : <AuthNavigation />}</>;
+  const login = () => {
+    setIsConnected(true);
+  };
+  const logout = () => setIsConnected(false);
+
+  return (
+    <>{isConnected ? <AppNavigation /> : <AuthNavigation login={login} />}</>
+  );
 }
 
 export default RootNavigation;

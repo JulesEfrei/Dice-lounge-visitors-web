@@ -7,11 +7,11 @@ import {
   WelcomePage,
 } from "../components/Pages";
 
-function AuthNavigation() {
+function AuthNavigation({ login }) {
   return (
     <Routes>
       <Route path="/" element={<WelcomePage router="auth" />} />
-      <Route path="/login" element={<LoginPage />} />
+      <Route path="/login" element={<LoginPage login={login} />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/*" element={<ErrorPage />} />
     </Routes>

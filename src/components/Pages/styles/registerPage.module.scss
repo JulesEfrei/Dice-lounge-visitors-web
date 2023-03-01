@@ -1,0 +1,22 @@
+@use "../../../utils/variables.scss";
+
+.imgContainer {
+  position: relative;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 75px;
+}
+
+.wrapper {
+  position: relative;
+  @include variables.flex(column, center, flex-start);
+  margin-top: 2rem;
+
+  .title {
+    font-family: sans-serif;
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+    color: variables.$primary-color;
+  }
+}
