@@ -6,20 +6,41 @@ import styles from "./styles/loadingPage.module.scss";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router";
 
-function LoginPage() {
+function LoginPage({ login }) {
   const email = useRef(null);
   const password = useRef(null);
 
   const navigation = useNavigate();
 
-  const formVerification = (event) => {
+  const formVerification = async (event) => {
     event.preventDefault();
     const result = verifForm({
       email: email.current.value,
       password: password.current.value,
     });
     if (result.success === true) {
-      navigation("/home");
+      const body = {
+        email: email.current.value,
+        password: password.current.value,
+      };
+
+      const req = await fetch("http://localhost:3000/api/v1/auth/sign-in", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
+
+      const res = await req.json();
+
+      if (!res.error) {
+        localStorage.setItem("userData", JSON.stringify(res));
+        login();
+        navigation("/home");
+      } else {
+        generateToast(res.error, "error");
+      }
     } else if (result.error.length === 1) {
       generateToast(
         `${

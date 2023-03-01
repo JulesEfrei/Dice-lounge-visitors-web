@@ -14,11 +14,11 @@ function RegisterPage() {
   const password = useRef(null);
   const birthday = useRef(null);
   const phone = useRef(null);
-  const [gender, setGender] = useState("Male");
+  const [gender, setGender] = useState(0);
 
   const navigation = useNavigate();
 
-  const formVerification = (event) => {
+  const formVerification = async (event) => {
     event.preventDefault();
     const result = verifForm({
       name: firstName.current.value,
@@ -27,10 +27,35 @@ function RegisterPage() {
       email: email.current.value,
       password: password.current.value,
       date: birthday.current.value,
-      phone: phone.current.value,
+      // phone: phone.current.value,
     });
     if (result.success === true) {
-      navigation("/login");
+      const body = {
+        firstName: firstName.current.value,
+        lastName: lastName.current.value,
+        password: password.current.value,
+        userName: userName.current.value,
+        email: email.current.value,
+        phone: phone.current.value,
+        birthday: birthday.current.value,
+        gender: gender === 0 ? "Male" : gender === 1 ? "Female" : "Other",
+      };
+
+      const req = await fetch("http://localhost:3000/api/v1/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
+
+      const res = await req.json();
+
+      if (!res.error) {
+        navigation("/login");
+      } else {
+        generateToast(res.error, "error");
+      }
     } else if (result.error.length === 1) {
       generateToast(
         `${
