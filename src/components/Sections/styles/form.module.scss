@@ -5,7 +5,6 @@
   form {
     @include variables.flex(column, flex-start, center);
     width: 100%;
-    padding: 20px 0;
     row-gap: 1rem;
 
     .wrapper {
@@ -13,7 +12,7 @@
     }
 
     .button {
-      margin-top: 2rem;
+      margin-top: 1.5rem;
       background-color: variables.$primary-color;
       border: none;
       font-family: sans-serif;
@@ -32,7 +31,7 @@
 
   .radio {
     width: 90%;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     @include variables.flex(row, flex-start, center);
 
     input {

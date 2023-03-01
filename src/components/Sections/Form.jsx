@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./styles/form.module.scss";
 import { Input } from "../Atoms/";
 import { Link } from "react-router-dom";
+import { GenderSelect } from "../Atoms/";
 
 function Form({ link, input, button, handdleSubmit }) {
   return (
@@ -11,7 +12,17 @@ function Form({ link, input, button, handdleSubmit }) {
           {input.map((elm, index) => {
             return (
               <div key={`${elm.name}-${index}`} className={styles.wrapper}>
-                {elm.type !== "radio" ? (
+                {elm.type === "radio" ? (
+                  <div className={styles.radio}>
+                    <input type="radio" required name={elm.name} />
+                    <label htmlFor={elm.name}>{elm.label}</label>
+                  </div>
+                ) : elm.type === "gender" ? (
+                  <GenderSelect
+                    state={elm.state}
+                    handleChange={(index) => elm.handleChange(index)}
+                  />
+                ) : (
                   <Input
                     name={elm.name}
                     type={elm.type}
@@ -20,11 +31,6 @@ function Form({ link, input, button, handdleSubmit }) {
                     icon={elm.icon ? elm.icon : null}
                     ref={elm.ref}
                   />
-                ) : (
-                  <div className={styles.radio}>
-                    <input type="radio" required name={elm.name} />
-                    <label htmlFor={elm.name}>{elm.label}</label>
-                  </div>
                 )}
               </div>
             );

@@ -1,7 +1,8 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router";
 import { ToastContainer } from "react-toastify";
 import { generateToast, verifForm } from "../../utils/formVarification";
+import { GenderSelect } from "../Atoms/";
 import { Form } from "../Sections/";
 import styles from "./styles/registerPage.module.scss";
 
@@ -13,6 +14,7 @@ function RegisterPage() {
   const password = useRef(null);
   const birthday = useRef(null);
   const phone = useRef(null);
+  const [gender, setGender] = useState("Male");
 
   const navigation = useNavigate();
 
@@ -97,6 +99,11 @@ function RegisterPage() {
               placeholder: "+44 ____ ____",
               label: "Phone Number",
               ref: phone,
+            },
+            {
+              type: "gender",
+              state: gender,
+              handleChange: (index) => setGender(index),
             },
             {
               name: "privacy",
