@@ -27,7 +27,7 @@ function RegisterPage() {
       email: email.current.value,
       password: password.current.value,
       date: birthday.current.value,
-      // phone: phone.current.value,
+      phone: phone.current.value,
     });
     if (result.success === true) {
       const body = {
@@ -121,7 +121,7 @@ function RegisterPage() {
             {
               name: "phone",
               type: "tel",
-              placeholder: "+44 ____ ____",
+              placeholder: "+44 1234 123456",
               label: "Phone Number",
               ref: phone,
             },
