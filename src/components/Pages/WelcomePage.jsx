@@ -13,7 +13,7 @@ function WelcomePage({ router }) {
 
   return (
     <>
-      <section>
+      <section className={styles.section}>
         <div className={styles.container}>
           <img src="./LOGO_White.png" alt="Dice Logo" className={styles.img} />
           {isShow ? (
