@@ -7,7 +7,7 @@ function BookingPage() {
   const [step, setStep] = useState(1);
 
   const bookingData = {
-    user: localStorage.getItem("userData"),
+    userId: JSON.parse(localStorage.getItem("userData")).id,
   };
 
   const addData = (field, data) => {
