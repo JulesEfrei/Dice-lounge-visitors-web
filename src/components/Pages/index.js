@@ -3,5 +3,13 @@ import ErrorPage from "./ErrorPage";
 import LoginPage from "./LoginPage";
 import RegisterPage from "./RegisterPage";
 import WelcomePage from "./WelcomePage";
+import BookingPage from "./BookingPage";
 
-export { HomePage, ErrorPage, LoginPage, RegisterPage, WelcomePage };
+export {
+  HomePage,
+  ErrorPage,
+  LoginPage,
+  RegisterPage,
+  WelcomePage,
+  BookingPage,
+};
