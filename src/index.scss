@@ -69,6 +69,19 @@ a:hover {
   text-decoration: none;
 }
 
+@font-face {
+  font-family: "Liberator";
+  src: local(""), url("./assets/fonts/Liberator.ttf") format("truetype"),
+    url("./assets/fonts/Liberator.otf") format("opentype"),
+    url("https://diceboardgamelounge.com/wp-content/uploads/elegant-custom-fonts/liberator.woff")
+      format("woff");
+}
+
+h1,
+h2 {
+  font-family: "Liberator", sans-serif;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
