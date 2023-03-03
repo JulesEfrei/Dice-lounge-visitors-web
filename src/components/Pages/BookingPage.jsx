@@ -4,7 +4,7 @@ import { BookingDate, BookingInfo, BookingCongrats } from "../Sections/";
 import { ToastContainer } from "react-toastify";
 
 function BookingPage() {
-  const [step, setStep] = useState(3);
+  const [step, setStep] = useState(1);
 
   const bookingData = {
     userId: JSON.parse(localStorage.getItem("userData")).id,
