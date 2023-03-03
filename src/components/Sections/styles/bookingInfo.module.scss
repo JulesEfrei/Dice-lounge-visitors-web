@@ -23,7 +23,7 @@
     width: 80%;
 
     .label {
-      font-family: sans-serif;
+      font-family: variables.$primary-font;
       margin-bottom: 2rem;
       align-self: flex-start;
       color: variables.$secondary-color;
@@ -42,7 +42,7 @@
     margin: 2rem 0;
 
     .text {
-      font-family: sans-serif;
+      font-family: variables.$primary-font;
       margin-bottom: 2rem;
       align-self: flex-start;
       color: variables.$secondary-color;
@@ -54,7 +54,7 @@
     margin-bottom: 2rem;
 
     .title {
-      font-family: sans-serif;
+      font-family: variables.$primary-font;
       margin-bottom: 2rem;
       align-self: flex-start;
       color: variables.$secondary-color;
@@ -62,6 +62,10 @@
 
     .wrapper {
       @include variables.flex(row, space-around, center);
+
+      h3 {
+        font-family: sans-serif;
+      }
 
       .button {
         background-color: transparent;
@@ -84,7 +88,7 @@
   }
 
   .submitButton {
-    font-family: sans-serif;
+    font-family: variables.$primary-font;
     font-size: 17px;
     color: white;
     padding: 5px 0;
