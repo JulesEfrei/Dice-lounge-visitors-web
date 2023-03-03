@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import styles from "./styles/bookingPage.module.scss";
-import { BookingDate } from "../Sections/";
+import { BookingDate, BookingInfo } from "../Sections/";
 import { ToastContainer } from "react-toastify";
 
 function BookingPage() {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(2);
 
   const bookingData = {
     userId: JSON.parse(localStorage.getItem("userData")).id,
@@ -32,6 +32,12 @@ function BookingPage() {
         {step === 1 ? (
           <BookingDate
             goForward={goForward}
+            updateData={(field, data) => addData(field, data)}
+          />
+        ) : step === 2 ? (
+          <BookingInfo
+            goForward={goForward}
+            goBack={goBack}
             updateData={(field, data) => addData(field, data)}
           />
         ) : null}
