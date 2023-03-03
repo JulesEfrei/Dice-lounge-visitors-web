@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import styles from "./styles/bookingPage.module.scss";
-import { BookingDate, BookingInfo } from "../Sections/";
+import { BookingDate, BookingInfo, BookingCongrats } from "../Sections/";
 import { ToastContainer } from "react-toastify";
 
 function BookingPage() {
-  const [step, setStep] = useState(2);
+  const [step, setStep] = useState(3);
 
   const bookingData = {
     userId: JSON.parse(localStorage.getItem("userData")).id,
@@ -26,7 +26,7 @@ function BookingPage() {
   return (
     <>
       <header className={styles.header}>
-        <h2>Book table</h2>
+        <h2>Book a table</h2>
       </header>
       <section className={styles.section}>
         {step === 1 ? (
@@ -40,6 +40,8 @@ function BookingPage() {
             goBack={goBack}
             updateData={(field, data) => addData(field, data)}
           />
+        ) : step === 3 ? (
+          <BookingCongrats />
         ) : null}
       </section>
       <ToastContainer />
