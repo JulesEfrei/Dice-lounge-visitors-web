@@ -3,9 +3,22 @@
 .container {
   @include variables.flex(column, flex-start, center);
   height: 80vh;
-  margin-top: 2rem;
+  position: relative;
+
+  .backButton {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    font-family: sans-serif;
+    font-size: 10px;
+    color: variables.$primary-color;
+    top: 10px;
+    left: 10px;
+    text-decoration: underline;
+  }
 
   .place {
+    margin-top: 2rem;
     @include variables.flex(column, flex-start, center);
     width: 80%;
 
