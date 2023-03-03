@@ -3,7 +3,7 @@ import styles from "./styles/bookingInfo.module.scss";
 import Picker from "react-mobile-picker-mod";
 import { generateToast } from "../../utils/formVarification";
 
-function BookingInfo({ updateData, goForward, goBack }) {
+function BookingInfo({ updateData, goForward, goBack, post }) {
   const [nbPeople, setNbPeople] = useState(2);
   const selectRef = useRef(null);
 
@@ -40,8 +40,6 @@ function BookingInfo({ updateData, goForward, goBack }) {
       generateToast("Please select a place.", "error");
       return;
     }
-
-    console.log(valueGroups);
 
     if (valueGroups.hours < "11" && valueGroups.time === "AM") {
       generateToast("Unfortunatly, Dice is closed before 11AM", "error");
