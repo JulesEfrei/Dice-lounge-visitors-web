@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Route, Routes, useLocation } from "react-router";
-import { HomePage, ErrorPage, WelcomePage } from "../components/Pages/";
+import { Route, Routes, useLocation } from "react-router-dom";
+import {
+  HomePage,
+  ErrorPage,
+  WelcomePage,
+  BookingPage,
+} from "../components/Pages/";
 import { Menu } from "../components/Sections/";
 
 function AppNavigation() {
@@ -10,9 +15,10 @@ function AppNavigation() {
     <>
       {pathname !== "/" ? <Menu /> : null}
       <Routes>
-        <Route path="/" element={<WelcomePage router="app" />} />
-        <Route path="/home" element={<HomePage />} />
-        <Route path="/*" element={<ErrorPage />} />
+        <Route index element={<WelcomePage router="app" />} />
+        <Route path="home" element={<HomePage />} />
+        <Route path="booking" element={<BookingPage />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router";
+import { Route, Routes } from "react-router-dom";
 import {
   LoginPage,
   RegisterPage,
@@ -10,10 +10,10 @@ import {
 function AuthNavigation({ login }) {
   return (
     <Routes>
-      <Route path="/" element={<WelcomePage router="auth" />} />
-      <Route path="/login" element={<LoginPage login={login} />} />
-      <Route path="/register" element={<RegisterPage />} />
-      <Route path="/*" element={<ErrorPage />} />
+      <Route index element={<WelcomePage router="auth" />} />
+      <Route path="login" element={<LoginPage login={login} />} />
+      <Route path="register" element={<RegisterPage />} />
+      <Route path="*" element={<ErrorPage />} />
     </Routes>
   );
 }

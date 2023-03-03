@@ -1,0 +1,12 @@
+@use "../../../utils/variables.scss";
+
+.header {
+  @include variables.flex();
+  background-color: variables.$primary-color;
+
+  h2 {
+    font-family: sans-serif;
+    color: white;
+    padding: 25px 0 10px 0;
+  }
+}
