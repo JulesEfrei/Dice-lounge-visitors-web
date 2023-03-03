@@ -69,6 +69,17 @@ a:hover {
   text-decoration: none;
 }
 
+h1,
+h2 {
+  @font-face {
+    font-family: "Liberator";
+    src: local("Liberator") url("./assets/fonts/Liberator.ttf")
+      format("truetype");
+  }
+
+  font-family: "Liberator";
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

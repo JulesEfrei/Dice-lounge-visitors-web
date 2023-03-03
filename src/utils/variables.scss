@@ -1,3 +1,5 @@
+// @import "./fonts.css";
+
 // Variables
 
 $primary-color: #0e3c52;
@@ -6,8 +8,9 @@ $info-color: #007ea7;
 $danger-color: #c33149;
 $success-color: #0aaf41;
 
-// Mixin
+$primary-font: "Liberator";
 
+// Mixin
 @mixin flex($direction: row, $jutify-content: center, $align-items: center) {
   display: flex;
   flex-direction: $direction;
