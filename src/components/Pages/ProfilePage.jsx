@@ -3,6 +3,7 @@ import styles from "./styles/profilePage.module.scss";
 import QRCode from "react-qr-code";
 import { Link } from "react-router-dom";
 import useSwr from "swr";
+import { Loading } from "../Atoms/";
 
 function ProfilePage() {
   const user = JSON.parse(localStorage.getItem("userData"));
@@ -14,10 +15,9 @@ function ProfilePage() {
     fetcher
   );
 
-  console.log(data.user);
-
+  //TO-DO => Make error Page
   if (error) return "An error has occurred.";
-  if (isLoading) return "Loading...";
+  if (isLoading) return <Loading />;
   return (
     <>
       <header className={styles.header}>
