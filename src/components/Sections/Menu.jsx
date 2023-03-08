@@ -11,7 +11,7 @@ function Menu() {
       icon: "/MsgIcon.svg",
     },
     { name: "Games", link: "/games", icon: "/DiceIcon.svg" },
-    { name: "Account", link: "/account", icon: "/UserIcon.svg" },
+    { name: "Account", link: "/profile", icon: "/UserIcon.svg" },
   ]);
 
   const [activeIndex, setActiveIndex] = useState(0);
