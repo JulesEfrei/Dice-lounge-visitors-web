@@ -56,10 +56,20 @@ function ProfilePage() {
         <Link className={styles.linkItem} to="setting">
           <img src="./Setting.svg" alt="Setting Icon" className={styles.img} />
           <p>Settings</p>
+          <img
+            src="./LittleArrow.svg"
+            alt="Arrow Icon"
+            className={styles.arrow}
+          />
         </Link>
         <Link className={styles.linkItem} to="new-group">
           <img src="./Group.svg" alt="Group Icon" className={styles.img} />
           <p>New Group</p>
+          <img
+            src="./LittleArrow.svg"
+            alt="Arrow Icon"
+            className={styles.arrow}
+          />
         </Link>
         <Link
           className={styles.linkItem}

@@ -117,6 +117,7 @@
   margin-bottom: 3rem;
 
   .linkItem {
+    position: relative;
     width: 100%;
     @include variables.flex(row, flex-start, center);
     margin-bottom: 1rem;
@@ -126,6 +127,13 @@
       width: 20px;
       height: 20px;
       margin-right: 2rem;
+    }
+
+    .arrow {
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      right: 0;
     }
 
     p {
