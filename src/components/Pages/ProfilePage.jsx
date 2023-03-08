@@ -2,8 +2,22 @@ import React from "react";
 import styles from "./styles/profilePage.module.scss";
 import QRCode from "react-qr-code";
 import { Link } from "react-router-dom";
+import useSwr from "swr";
 
 function ProfilePage() {
+  const user = JSON.parse(localStorage.getItem("userData"));
+
+  const fetcher = (...args) => fetch(...args).then((res) => res.json());
+
+  const { data, error, isLoading } = useSwr(
+    `http://localhost:3000/api/v1/user/${user.id}`,
+    fetcher
+  );
+
+  console.log(data.user);
+
+  if (error) return "An error has occurred.";
+  if (isLoading) return "Loading...";
   return (
     <>
       <header className={styles.header}>
@@ -11,9 +25,13 @@ function ProfilePage() {
       </header>
 
       <div className={styles.userMainContainer}>
-        <div className={styles.img}></div>
-        <p>@UserTest</p>
-        <h2>User Name</h2>
+        <img
+          src={data.user.avatar}
+          alt="Profile picture"
+          className={styles.img}
+        />
+        <p>@{data.user.userName}</p>
+        <h2>{data.user.firstName}</h2>
       </div>
 
       <div className={styles.userInfoContainer}>
