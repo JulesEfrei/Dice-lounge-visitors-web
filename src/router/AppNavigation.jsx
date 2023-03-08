@@ -5,6 +5,7 @@ import {
   ErrorPage,
   WelcomePage,
   BookingPage,
+  GameDetails,
 } from "../components/Pages/";
 import { Menu } from "../components/Sections/";
 
@@ -18,6 +19,7 @@ function AppNavigation() {
         <Route index element={<WelcomePage router="app" />} />
         <Route path="home" element={<HomePage />} />
         <Route path="booking" element={<BookingPage />} />
+        <Route path="game" element={<GameDetails />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </>
