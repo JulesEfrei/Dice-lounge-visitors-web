@@ -1,6 +1,6 @@
 import React from "react";
-import { useLocation, useRevalidator } from "react-router";
 import styles from "./styles/header.module.scss";
+import { Menu } from "./";
 
 function Header() {
   const page = window.location.pathname.split("/")[1];
@@ -19,6 +19,7 @@ function Header() {
             />
           </div>
         ) : null}
+        <Menu />
       </header>
     </>
   );
