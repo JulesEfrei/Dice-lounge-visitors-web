@@ -64,7 +64,11 @@ function ProfilePage() {
       <div className={styles.qrContainer}>
         <h4>Member since September 2020</h4>
         <div className={styles.qrcode}>
-          <QRCode size={256} value="Test" fgColor="#d29628" />
+          <QRCode
+            size={256}
+            value={`http://localhost:3000/api/v1/user/${user.id}`}
+            fgColor="#d29628"
+          />
         </div>
       </div>
 
