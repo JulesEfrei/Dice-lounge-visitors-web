@@ -56,3 +56,39 @@ The `main` branch is the production branch. This means that we only push the rel
 The `dev` branch is the development branch. We push new features on it and we test our application on this branch before merging it into the main branch. Generally, we only merge a branch to this one and we never push code directly on it.
 
 Then, we have `"features"` branch (Ex: Authentification, HomePage, Reservation, etc). These are feature branches. We code and push code only on these branches. When the feature is finished, we merge them to the `dev` branch to test them and approve them.
+
+### Reminder GitHub Command
+
+Usefull command:
+
+```bash
+# Change branch
+git checkout -b <branch-name>
+```
+
+Push code:
+
+```bash
+# Add your code in the next commit
+git add .
+
+# Create the commit and the message's commit
+git commit -m "New Commit"
+
+# Push the code to the remote repository
+git push -u origin <branch-name> 
+```
+
+Full example:
+
+I've coded the authentification features and I would push my code on GitHub.
+
+```bash
+cd "path/project"
+
+git checkout -b dev-auth
+
+git add .
+git commit -m "Add : Authentification features"
+git push -u origin dev-auth
+```
