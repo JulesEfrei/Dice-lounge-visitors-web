@@ -7,14 +7,13 @@ import {
   BookingPage,
   ProfilePage,
 } from "../components/Pages/";
-import { Menu, Header } from "../components/Sections/";
+import { Header } from "../components/Sections/";
 
 function AppNavigation() {
   const { pathname } = useLocation();
 
   return (
     <>
-      {pathname !== "/" ? <Menu /> : null}
       {pathname !== "/" ? <Header /> : null}
       <Routes>
         <Route index element={<WelcomePage router="app" />} />

@@ -1,18 +1,27 @@
 @use "../../../utils/variables.scss";
 
+.burger {
+  position: absolute;
+  right: 20px;
+  top: 3rem;
+  transform: translateY(-50%);
+
+  .line {
+    height: 30px;
+  }
+
+  .cross {
+    height: 20px;
+  }
+}
+
 .navbar {
-  width: 100%;
   position: fixed;
-  bottom: 0;
+  top: 5.5rem;
   left: 0;
-  padding: 15px 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  width: 100dvw;
+  height: 100dvh;
   background-color: white;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  box-shadow: 0 4px 10px;
 
   .link {
     text-decoration: none;
@@ -38,15 +47,15 @@
     }
 
     .text {
-      display: none;
       margin-left: 10px;
+      color: variables.$primary-color;
     }
   }
 
   .active {
     background-color: variables.$primary-color;
     .text {
-      display: block;
+      color: white;
     }
 
     .img {
