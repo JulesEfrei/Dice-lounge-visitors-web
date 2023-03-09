@@ -14,7 +14,9 @@ function Menu() {
     { name: "Account", link: "/profile", icon: "/UserIcon.svg" },
   ]);
 
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeLinks, setActiveLinks] = useState(
+    window.window.location.pathname
+  );
   const [isShow, setIsShow] = useState(false);
 
   return (
@@ -42,10 +44,10 @@ function Menu() {
                 key={`${elm.name}-${index}`}
                 to={elm.link}
                 className={`${styles.link} ${
-                  activeIndex === index ? styles.active : ""
+                  activeLinks === elm.link ? styles.active : ""
                 }`}
                 onClick={() => {
-                  setActiveIndex(index);
+                  setActiveIndex(window.window.location.pathname);
                   setIsShow(false);
                 }}
               >
