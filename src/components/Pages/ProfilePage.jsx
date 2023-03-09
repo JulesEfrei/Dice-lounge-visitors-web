@@ -10,12 +10,14 @@ function ProfilePage() {
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-  const { data, error, isLoading } = useSwr(
-    `http://localhost:3000/api/v1/user/${user.id}`,
-    fetcher
-  );
+  // const { data, error, isLoading } = useSwr(
+  //   `http://localhost:3000/api/v1/user/${user.id}`,
+  //   fetcher
+  // );
 
   //TO-DO => Make error Page
+  const error = true;
+
   if (error) return <Error />;
   if (isLoading) return <Loading />;
   return (
@@ -39,19 +41,19 @@ function ProfilePage() {
           <div className={styles.img}>
             <img src="./Friends.svg" alt="Friends icon" />
           </div>
-          <p>35 Friends</p>
+          <p>0 Friends</p>
         </div>
         <div className={styles.items}>
           <div className={styles.img}>
             <img src="./Trophies.svg" alt="Trophies icon" />
           </div>
-          <p>8 Trophies</p>
+          <p>{data.user.UserToBadge.length} Trophies</p>
         </div>
         <div className={styles.items}>
           <div className={styles.img}>
             <img src="./Save.svg" alt="Save icon" />
           </div>
-          <p>5 Games Saved</p>
+          <p>{data.user.gameLike.length} Games Saved</p>
         </div>
         <button className={styles.button}>
           <div className={styles.img}>
