@@ -1,7 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router";
 import styles from "./styles/bookingCongrats.module.scss";
 
 function BookingCongrats() {
+  const navigation = useNavigate();
+
+  setTimeout(() => {
+    navigation("/home");
+  }, 1500);
+
   return (
     <>
       <div className={styles.container}>

@@ -62,7 +62,7 @@ function BookingPage() {
 
   return (
     <>
-      <section className={styles.section}>
+      <section>
         {step === 1 ? (
           <BookingDate
             goForward={goForward}
