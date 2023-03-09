@@ -5,9 +5,6 @@ import styles from "./styles/errorPage.module.scss";
 function ErrorPage({ type }) {
   return (
     <>
-      <header className={styles.header}>
-        <h2>Error</h2>
-      </header>
       <div className={styles.container}>
         <img src="./404.svg" alt="404 Illustration" />
         <div className={styles.textContainer}>

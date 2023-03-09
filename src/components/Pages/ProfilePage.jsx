@@ -20,10 +20,6 @@ function ProfilePage() {
   if (isLoading) return <Loading />;
   return (
     <>
-      <header className={styles.header}>
-        <h2>Profile</h2>
-      </header>
-
       <div className={styles.userMainContainer}>
         <img
           src={data.user.avatar}
