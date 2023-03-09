@@ -17,13 +17,16 @@
 
   .button {
     background-color: variables.$primary-color;
-    padding: 5px 40px;
+    padding: 7px 50px;
     border-radius: 20px;
     text-decoration: none;
 
     h2 {
       color: white;
       text-decoration: none;
+      font-size: 17px;
+      text-align: center;
+      align-self: center;
     }
   }
 }

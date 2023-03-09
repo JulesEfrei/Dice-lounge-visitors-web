@@ -126,13 +126,15 @@
       color: variables.$primary-color;
       font-family: sans-serif;
     }
+  }
 
-    &:nth-child(3) p {
-      border-bottom: 1px solid variables.$primary-color;
-    }
+  .underline p {
+    border-bottom: 1px solid variables.$primary-color;
+  }
 
-    &:last-child p {
-      border-bottom: 1px solid variables.$primary-color;
+  .logout {
+    &:hover {
+      cursor: pointer;
     }
   }
 }

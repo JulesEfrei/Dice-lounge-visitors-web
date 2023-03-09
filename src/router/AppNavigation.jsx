@@ -9,7 +9,7 @@ import {
 } from "../components/Pages/";
 import { Header } from "../components/Sections/";
 
-function AppNavigation() {
+function AppNavigation({ logout }) {
   const { pathname } = useLocation();
 
   return (
@@ -19,8 +19,8 @@ function AppNavigation() {
         <Route index element={<WelcomePage router="app" />} />
         <Route path="home" element={<HomePage />} />
         <Route path="booking" element={<BookingPage />} />
-        <Route path="profile" element={<ProfilePage />} />
-        <Route path="*" element={<ErrorPage type="400" />} />
+        <Route path="profile" element={<ProfilePage logout={logout} />} />
+        <Route path="*" element={<ErrorPage type="404" />} />
       </Routes>
     </>
   );

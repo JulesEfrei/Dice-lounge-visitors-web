@@ -6,7 +6,7 @@ import useSwr from "swr";
 import { Loading } from "../Atoms/";
 import { ErrorPage } from "../Pages/";
 
-function ProfilePage() {
+function ProfilePage({ logout }) {
   const user = JSON.parse(localStorage.getItem("userData"));
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
@@ -16,7 +16,7 @@ function ProfilePage() {
     fetcher
   );
 
-  if (error) return <ErrorPage type="500" />;
+  if (error) return <ErrorPage type="505" />;
   if (isLoading) return <Loading />;
   return (
     <>
@@ -72,6 +72,15 @@ function ProfilePage() {
 
       <div className={styles.linkContainer}>
         <Link className={styles.linkItem} to="setting">
+          <img src="./book.svg" alt="Setting Icon" className={styles.img} />
+          <p>My bookings</p>
+          <img
+            src="./LittleArrow.svg"
+            alt="Arrow Icon"
+            className={styles.arrow}
+          />
+        </Link>
+        <Link className={styles.linkItem} to="setting">
           <img src="./Setting.svg" alt="Setting Icon" className={styles.img} />
           <p>Settings</p>
           <img
@@ -90,7 +99,7 @@ function ProfilePage() {
           />
         </Link>
         <Link
-          className={styles.linkItem}
+          className={`${styles.linkItem} ${styles.underline}`}
           to="https://diceboardgamelounge.com/rentals/"
           target="_blank"
         >
@@ -98,13 +107,17 @@ function ProfilePage() {
           <p>Become a premium member</p>
         </Link>
         <Link
-          className={styles.linkItem}
+          className={`${styles.linkItem} ${styles.underline}`}
           to="https://diceboardgamelounge.com/about/"
           target="_blank"
         >
           <img src="./About.svg" alt="About Icon" className={styles.img} />
           <p>About Us</p>
         </Link>
+        <div className={`${styles.linkItem} ${styles.logout}`} onClick={logout}>
+          <img src="./logout.svg" alt="About Icon" className={styles.img} />
+          <p>Log out</p>
+        </div>
       </div>
     </>
   );
