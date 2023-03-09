@@ -3,22 +3,20 @@ import styles from "./styles/profilePage.module.scss";
 import QRCode from "react-qr-code";
 import { Link } from "react-router-dom";
 import useSwr from "swr";
-import { Loading, Error } from "../Atoms/";
+import { Loading } from "../Atoms/";
+import { ErrorPage } from "../Pages/";
 
 function ProfilePage() {
   const user = JSON.parse(localStorage.getItem("userData"));
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-  // const { data, error, isLoading } = useSwr(
-  //   `http://localhost:3000/api/v1/user/${user.id}`,
-  //   fetcher
-  // );
+  const { data, error, isLoading } = useSwr(
+    `http://localhost:3000/api/v1/user/${user.id}`,
+    fetcher
+  );
 
-  //TO-DO => Make error Page
-  const error = true;
-
-  if (error) return <Error />;
+  if (error) return <ErrorPage type="500" />;
   if (isLoading) return <Loading />;
   return (
     <>

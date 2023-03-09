@@ -1,0 +1,44 @@
+@use "../../../utils/variables.scss";
+
+.header {
+  @include variables.flex();
+  background-color: variables.$primary-color;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+  h2 {
+    font-family: variables.$primary-font;
+    color: white;
+    padding: 25px 0 10px 0;
+  }
+}
+
+.container {
+  width: 100%;
+  height: 80dvh;
+  @include variables.flex(column, space-around, center);
+
+  .textContainer {
+    @include variables.flex(column, flex-start, center);
+
+    p {
+      font-family: sans-serif;
+      width: 75%;
+      text-align: center;
+    }
+  }
+
+  .button {
+    background-color: variables.$primary-color;
+    padding: 5px 40px;
+    border-radius: 20px;
+    text-decoration: none;
+
+    h2 {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}

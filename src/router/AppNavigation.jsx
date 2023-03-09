@@ -20,7 +20,7 @@ function AppNavigation() {
         <Route path="home" element={<HomePage />} />
         <Route path="booking" element={<BookingPage />} />
         <Route path="profile" element={<ProfilePage />} />
-        <Route path="*" element={<ErrorPage />} />
+        <Route path="*" element={<ErrorPage type="400" />} />
       </Routes>
     </>
   );
