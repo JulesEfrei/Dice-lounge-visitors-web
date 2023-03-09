@@ -7,7 +7,7 @@ import {
   BookingPage,
   ProfilePage,
 } from "../components/Pages/";
-import { Menu } from "../components/Sections/";
+import { Menu, Header } from "../components/Sections/";
 
 function AppNavigation() {
   const { pathname } = useLocation();
@@ -15,6 +15,7 @@ function AppNavigation() {
   return (
     <>
       {pathname !== "/" ? <Menu /> : null}
+      {pathname !== "/" ? <Header /> : null}
       <Routes>
         <Route index element={<WelcomePage router="app" />} />
         <Route path="home" element={<HomePage />} />
