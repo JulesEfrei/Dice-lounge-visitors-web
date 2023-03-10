@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import useSwr from "swr";
 import { Loading } from "../Atoms/";
 import { ErrorPage } from "../Pages/";
+import generateAvatar from "../../utils/avatar";
 
 function ProfilePage({ logout }) {
   const user = JSON.parse(localStorage.getItem("userData"));
@@ -16,16 +17,22 @@ function ProfilePage({ logout }) {
     fetcher
   );
 
+  let avatar;
+
+  if (!isLoading && data) {
+    avatar = generateAvatar(
+      "adventurer",
+      data.user.gender === "Male" ? "Male" : "Female"
+    );
+    console.log(avatar);
+  }
+
   if (error) return <ErrorPage type="505" />;
   if (isLoading) return <Loading />;
   return (
     <>
       <div className={styles.userMainContainer}>
-        <img
-          src={data.user.avatar}
-          alt="Profile picture"
-          className={styles.img}
-        />
+        <img src={avatar} alt="Profile picture" className={styles.img} />
         <p>@{data.user.userName}</p>
         <h2>{data.user.firstName}</h2>
       </div>
