@@ -133,7 +133,6 @@
 
 .reviewContainer {
   margin: 3rem 20px;
-  padding: 2rem 20px;
 
   .items {
     @include variables.flex(column, flex-start, center);

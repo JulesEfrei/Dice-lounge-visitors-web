@@ -6,6 +6,8 @@ import { Loading } from "../Atoms/";
 import { Header } from "../Sections/";
 import useSwr from "swr";
 import { formatDistanceStrict } from "date-fns";
+import { generateToast, verifForm } from "../../utils/formVarification";
+import { ToastContainer } from "react-toastify";
 
 function GameDetails() {
   const navigate = useNavigate();
@@ -15,6 +17,46 @@ function GameDetails() {
   let { gameId } = useParams();
 
   const user = JSON.parse(localStorage.getItem("userData"));
+
+  const formVerification = async () => {
+    const result = verifForm({
+      name: textRef.current ? textRef.current.value : "",
+    });
+
+    if (result.success === true && rating !== 0) {
+      const body = {
+        content: textRef.current.value,
+        userId: user.id,
+        rating,
+        gameId,
+      };
+
+      try {
+        const req = await fetch("http://localhost:3000/api/v1/review/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user.accessToken}`,
+          },
+          body: JSON.stringify(body),
+        });
+
+        const res = await req.json();
+
+        if (!res.error) {
+          generateToast("Review successfully added!", "success");
+          ref.current.value = "";
+          setRating(0);
+        } else {
+          generateToast(res.error, "error");
+        }
+      } catch (err) {
+        generateToast(err, "error");
+      }
+    } else {
+      generateToast("Invalid form!");
+    }
+  };
 
   const fetcher = (urls) => {
     const f = (url) => fetch(url).then((r) => r.json());
@@ -31,14 +73,14 @@ function GameDetails() {
 
   if (error) return <ErrorPage type="505" />;
   if (isLoading) return <Loading />;
-  if (!isLoading) console.log(data[1]);
-  if (!isLoading && data.error)
+  if (!isLoading && data.error) {
     return (
       <>
         <Header />
         <ErrorPage type="404" />
       </>
     );
+  }
   return (
     <>
       <div className={styles.header}>
@@ -119,8 +161,8 @@ function GameDetails() {
           ></textarea>
         </div>
       </div>
-      <div className={styles.buttonContainer}>
-        <div className={styles.button} onClick={() => {}}>
+      <div className={styles.buttonContainer} onClick={formVerification}>
+        <div className={styles.button}>
           <h2>Send review</h2>
         </div>
       </div>
@@ -153,6 +195,8 @@ function GameDetails() {
           </div>
         ))}
       </div>
+
+      <ToastContainer />
     </>
   );
 }
