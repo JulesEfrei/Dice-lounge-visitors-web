@@ -158,8 +158,9 @@ function GameDetails() {
           className={styles.img}
           style={{
             backgroundImage: `url("${
-              data[0].game.cover ? data[0].game.cover : "/Cover.png"
+              data[0].game.cover ? data[0].game.cover : "/LOGO_Black.png"
             }")`,
+            backgroundSize: data[0].game.cover ? "100%" : "50%",
           }}
         ></div>
       </div>
