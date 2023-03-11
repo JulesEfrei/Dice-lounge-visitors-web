@@ -18,6 +18,57 @@ function GameDetails() {
 
   const user = JSON.parse(localStorage.getItem("userData"));
 
+  const saveGame = async () => {
+    try {
+      const req = await fetch(
+        `http://localhost:3000/api/v1/user/${user.id}/game-liked`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user.accessToken}`,
+          },
+          body: JSON.stringify({ gameId }),
+        }
+      );
+
+      const res = await req.json();
+
+      if (!res.error) {
+        generateToast("Game saved!", "success");
+      } else {
+        generateToast(res.error, "error");
+      }
+    } catch (err) {
+      generateToast(err, "error");
+    }
+  };
+
+  const unSaveGame = async () => {
+    try {
+      const req = await fetch(
+        `http://localhost:3000/api/v1/user/${user.id}/game-liked/${gameId}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user.accessToken}`,
+          },
+        }
+      );
+
+      const res = await req.json();
+
+      if (!res.error) {
+        generateToast("Game unsaved!", "success");
+      } else {
+        generateToast(res.error, "error");
+      }
+    } catch (err) {
+      generateToast(err, "error");
+    }
+  };
+
   const formVerification = async () => {
     const result = verifForm({
       name: textRef.current ? textRef.current.value : "",
@@ -87,7 +138,12 @@ function GameDetails() {
         <div className={styles.items} onClick={() => navigate(-1)}>
           <img src="/Arrow.svg" alt="Arrow" />
         </div>
-        <div className={styles.items}>
+        <div
+          className={styles.items}
+          onClick={() =>
+            data[1].data.length === 0 ? saveGame() : unSaveGame()
+          }
+        >
           <img
             src={data[1].data.length === 0 ? "/Save.svg" : "/filled-Save.svg"}
             alt="Arrow"
