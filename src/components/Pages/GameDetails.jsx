@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import styles from "./styles/gameDetails.module.scss";
 import { ErrorPage } from "./";
@@ -9,6 +9,8 @@ import { formatDistanceStrict } from "date-fns";
 
 function GameDetails() {
   const navigate = useNavigate();
+  const [rating, setRating] = useState(0);
+  const textRef = useRef(null);
 
   let { gameId } = useParams();
 
@@ -93,15 +95,28 @@ function GameDetails() {
           <p>Rate the game</p>
           <div className={styles.starContainer}>
             {new Array(5).fill(0, null).map((elm, index) => (
-              <div className={styles.items} key={index}>
-                <img src="/rating.png" alt="Rating icon" />
+              <div
+                className={styles.items}
+                key={index}
+                onClick={() => setRating(index + 1)}
+              >
+                <img
+                  src={rating <= index ? "/rating.png" : "/filled-rating.png"}
+                  alt="Rating icon"
+                />
               </div>
             ))}
           </div>
         </div>
         <div className={styles.content}>
           <p>Leave a comment</p>
-          <textarea name="comment" id="comment" cols="60" rows="10"></textarea>
+          <textarea
+            name="comment"
+            id="comment"
+            cols="60"
+            rows="10"
+            ref={textRef}
+          ></textarea>
         </div>
       </div>
       <div className={styles.buttonContainer}>
