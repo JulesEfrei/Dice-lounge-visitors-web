@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useMemo, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import styles from "./styles/gameDetails.module.scss";
 import { ErrorPage } from "./";
@@ -12,6 +12,7 @@ import { ToastContainer } from "react-toastify";
 function GameDetails() {
   const navigate = useNavigate();
   const [rating, setRating] = useState(0);
+  const [isSaved, setIsSaved] = useState(false);
   const textRef = useRef(null);
 
   let { gameId } = useParams();
@@ -66,6 +67,16 @@ function GameDetails() {
       }
     } catch (err) {
       generateToast(err, "error");
+    }
+  };
+
+  const save = () => {
+    if (!isSaved) {
+      saveGame();
+      setIsSaved(true);
+    } else if (isSaved) {
+      unSaveGame();
+      setIsSaved(false);
     }
   };
 
@@ -138,16 +149,8 @@ function GameDetails() {
         <div className={styles.items} onClick={() => navigate(-1)}>
           <img src="/Arrow.svg" alt="Arrow" />
         </div>
-        <div
-          className={styles.items}
-          onClick={() =>
-            data[1].data.length === 0 ? saveGame() : unSaveGame()
-          }
-        >
-          <img
-            src={data[1].data.length === 0 ? "/Save.svg" : "/filled-Save.svg"}
-            alt="Arrow"
-          />
+        <div className={styles.items} onClick={() => save()}>
+          <img src={!isSaved ? "/Save.svg" : "/filled-Save.svg"} alt="Arrow" />
         </div>
       </div>
       <div className={styles.gameImg}>
