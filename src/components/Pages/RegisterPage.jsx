@@ -72,7 +72,7 @@ function RegisterPage() {
   return (
     <>
       <div className={styles.imgContainer}>
-        <img src="./LOGO_Black.png" alt="Logo of Dice" />
+        <img src="/LOGO_Black.png" alt="Logo of Dice" />
       </div>
       <div className={styles.wrapper}>
         <h1 className={styles.title}>Create an account</h1>

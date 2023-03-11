@@ -1,0 +1,200 @@
+@use "../../../utils/variables.scss";
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  @include variables.flex(row, space-between, center);
+  padding: 10px 10px;
+  z-index: 10;
+
+  .items {
+    width: 46px;
+    height: 46px;
+    background-color: #000000ac;
+    @include variables.flex();
+    border-radius: 14px;
+  }
+}
+
+.gameImg {
+  position: relative;
+  height: 350px;
+  width: 100vw;
+  border-radius: 0px 0px 50px 50px;
+  z-index: 0;
+
+  .img {
+    height: 100%;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 0px 0px 50px 50px;
+    box-shadow: 0 0px 15px;
+  }
+}
+
+.mainContainer {
+  z-index: 0;
+  position: relative;
+  box-shadow: 0.9px 6.59px 13.19px rgba(0, 0, 0, 0.5);
+  border-radius: 30px;
+  margin: 3rem 20px 3rem 20px;
+  padding: 2rem 20px;
+  @include variables.flex(column, flex-start, center);
+
+  h2 {
+    text-align: center;
+  }
+
+  .tags {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    @include variables.flex(row, space-between, center);
+
+    .items {
+      color: variables.$primary-color;
+      font-family: sans-serif;
+      @include variables.flex();
+      background-color: variables.$creme-color;
+      padding: 5px 10px;
+      border-radius: 7px;
+
+      img {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .description {
+    font-family: sans-serif;
+  }
+}
+
+.buttonContainer {
+  width: 100%;
+  @include variables.flex();
+  margin-bottom: 2rem;
+
+  .button {
+    background-color: variables.$primary-color;
+    padding: 10px 40px;
+    border-radius: 20px;
+
+    h2 {
+      color: white;
+    }
+  }
+}
+
+.postReviewContainer {
+  margin: 3rem 20px;
+  box-shadow: 0.9px 6.59px 13.19px rgba(0, 0, 0, 0.5);
+  border-radius: 30px;
+  padding: 2rem 20px;
+
+  .rating {
+    margin-bottom: 2rem;
+    p {
+      font-family: sans-serif;
+      font-size: 18px;
+      color: variables.$primary-color;
+    }
+    .starContainer {
+      margin-top: 10px;
+      @include variables.flex(row, flex-start, center);
+
+      .items {
+        width: 30px;
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  .content {
+    p {
+      font-family: sans-serif;
+      font-size: 18px;
+      color: variables.$primary-color;
+    }
+
+    textarea {
+      margin-top: 10px;
+      width: 100%;
+      border-color: variables.$primary-color;
+      color: variables.$primary-color;
+      font-family: sans-serif;
+      padding: 10px;
+    }
+  }
+}
+
+.reviewContainer {
+  margin: 3rem 20px;
+
+  .items {
+    @include variables.flex(column, flex-start, center);
+    box-shadow: 3px 7.89014px 7.89014px rgba(193, 193, 193, 0.5);
+    padding: 20px;
+    border-radius: 5px;
+
+    .top {
+      width: 100%;
+      @include variables.flex(row, flex-start, center);
+
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        padding: 5px;
+        background-color: variables.$secondary-color;
+      }
+
+      h3 {
+        font-family: sans-serif;
+        margin-left: 10px;
+      }
+    }
+
+    .mid {
+      width: 100%;
+      margin: 1.5rem 0;
+      @include variables.flex(row, flex-start, center);
+
+      p {
+        font-family: sans-serif;
+        font-size: 18px;
+      }
+    }
+
+    .bottom {
+      width: 100%;
+      @include variables.flex(row, space-between, center);
+
+      .rating {
+        @include variables.flex(row, flex-start, center);
+
+        img {
+          padding: 5px;
+          width: 30px;
+          height: 30px;
+          box-shadow: 0px 2.69439px 9.87944px rgba(0, 0, 0, 0.15);
+          border-radius: 10px;
+        }
+
+        h4 {
+          font-family: sans-serif;
+          margin-left: 10px;
+        }
+      }
+
+      .date {
+        p {
+          font-family: sans-serif;
+        }
+      }
+    }
+  }
+}

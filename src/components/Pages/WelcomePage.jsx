@@ -7,7 +7,7 @@ function WelcomePage({ router }) {
     <>
       <section className={styles.section}>
         <div className={styles.container}>
-          <img src="./LOGO_White.png" alt="Dice Logo" className={styles.img} />
+          <img src="/LOGO_White.png" alt="Dice Logo" className={styles.img} />
           <Link
             to={router === "app" ? "/home" : "login"}
             className={styles.button}

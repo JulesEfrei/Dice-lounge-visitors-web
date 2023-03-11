@@ -7,9 +7,9 @@ function ErrorPage({ type }) {
     <>
       <div className={styles.container}>
         {type === "404" ? (
-          <img src="./404.svg" alt="404 Illustration" />
+          <img src="/404.svg" alt="404 Illustration" />
         ) : (
-          <img src="./505.svg" alt="505 Illustration" />
+          <img src="/505.svg" alt="505 Illustration" />
         )}
         <div className={styles.textContainer}>
           <h1>Oh NO!</h1>

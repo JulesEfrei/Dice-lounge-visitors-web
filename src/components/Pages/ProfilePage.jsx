@@ -40,25 +40,25 @@ function ProfilePage({ logout }) {
       <div className={styles.userInfoContainer}>
         <div className={styles.items}>
           <div className={styles.img}>
-            <img src="./Friends.svg" alt="Friends icon" />
+            <img src="/Friends.svg" alt="Friends icon" />
           </div>
           <p>0 Friends</p>
         </div>
         <div className={styles.items}>
           <div className={styles.img}>
-            <img src="./Trophies.svg" alt="Trophies icon" />
+            <img src="/Trophies.svg" alt="Trophies icon" />
           </div>
           <p>{data.user.UserToBadge.length} Trophies</p>
         </div>
         <div className={styles.items}>
           <div className={styles.img}>
-            <img src="./Save.svg" alt="Save icon" />
+            <img src="/Save.svg" alt="Save icon" />
           </div>
           <p>{data.user.gameLike.length} Games Saved</p>
         </div>
         <button className={styles.button}>
           <div className={styles.img}>
-            <img src="./UserIcon.svg" alt="User icon" />
+            <img src="/UserIcon.svg" alt="User icon" />
           </div>
           <h2>Contact Details</h2>
         </button>
@@ -79,7 +79,7 @@ function ProfilePage({ logout }) {
 
       <div className={styles.linkContainer}>
         <Link className={styles.linkItem} to="setting">
-          <img src="./book.svg" alt="Setting Icon" className={styles.img} />
+          <img src="/book.svg" alt="Setting Icon" className={styles.img} />
           <p>My bookings</p>
           <img
             src="./LittleArrow.svg"
@@ -88,7 +88,7 @@ function ProfilePage({ logout }) {
           />
         </Link>
         <Link className={styles.linkItem} to="setting">
-          <img src="./Setting.svg" alt="Setting Icon" className={styles.img} />
+          <img src="/Setting.svg" alt="Setting Icon" className={styles.img} />
           <p>Settings</p>
           <img
             src="./LittleArrow.svg"
@@ -97,10 +97,10 @@ function ProfilePage({ logout }) {
           />
         </Link>
         <Link className={styles.linkItem} to="new-group">
-          <img src="./Group.svg" alt="Group Icon" className={styles.img} />
+          <img src="/Group.svg" alt="Group Icon" className={styles.img} />
           <p>New Group</p>
           <img
-            src="./LittleArrow.svg"
+            src="/LittleArrow.svg"
             alt="Arrow Icon"
             className={styles.arrow}
           />
@@ -110,7 +110,7 @@ function ProfilePage({ logout }) {
           to="https://diceboardgamelounge.com/rentals/"
           target="_blank"
         >
-          <img src="./Premium.svg" alt="Premium Icon" className={styles.img} />
+          <img src="/Premium.svg" alt="Premium Icon" className={styles.img} />
           <p>Become a premium member</p>
         </Link>
         <Link
@@ -122,7 +122,7 @@ function ProfilePage({ logout }) {
           <p>About Us</p>
         </Link>
         <div className={`${styles.linkItem} ${styles.logout}`} onClick={logout}>
-          <img src="./logout.svg" alt="About Icon" className={styles.img} />
+          <img src="/logout.svg" alt="About Icon" className={styles.img} />
           <p>Log out</p>
         </div>
       </div>

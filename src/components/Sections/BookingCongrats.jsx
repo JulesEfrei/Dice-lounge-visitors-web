@@ -13,7 +13,7 @@ function BookingCongrats() {
     <>
       <div className={styles.container}>
         <div className={styles.img}>
-          <img src="./congratulation.svg" alt="Congratulation icon" />
+          <img src="/congratulation.svg" alt="Congratulation icon" />
         </div>
         <h2 className={styles.title}>Congratulation</h2>
         <p className={styles.text}>

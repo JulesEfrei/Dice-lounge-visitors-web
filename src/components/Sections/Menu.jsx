@@ -24,13 +24,13 @@ function Menu() {
       <div className={styles.burger} onClick={() => setIsShow((curr) => !curr)}>
         {!isShow ? (
           <img
-            src="burger.svg"
+            src="/burger.svg"
             alt="Burger menu Icon"
             className={styles.line}
           />
         ) : (
           <img
-            src="cross.png"
+            src="/cross.png"
             alt="Burger menu Icon"
             className={styles.cross}
           />
@@ -52,7 +52,7 @@ function Menu() {
                 }}
               >
                 <div className={styles.img}>
-                  <img src={`./${elm.icon}`} alt={elm.name} />
+                  <img src={elm.icon} alt={elm.name} />
                 </div>
                 <p className={styles.text}>{elm.name}</p>
               </Link>
