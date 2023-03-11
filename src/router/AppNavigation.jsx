@@ -13,17 +13,39 @@ import { Header } from "../components/Sections/";
 function AppNavigation({ logout }) {
   const { pathname } = useLocation();
 
-  const disbaledHeaderRoute = ["/game"];
-
   return (
     <>
-      {pathname !== "/" ? <Header /> : null}
+      {/* {pathname !== "/" ? <Header /> : null} */}
       <Routes>
         <Route index element={<WelcomePage router="app" />} />
-        <Route path="home" element={<HomePage />} />
-        <Route path="booking" element={<BookingPage />} />
+        <Route
+          path="home"
+          element={
+            <>
+              <Header />
+              <HomePage />
+            </>
+          }
+        />
+        <Route
+          path="booking"
+          element={
+            <>
+              <Header />
+              <BookingPage />
+            </>
+          }
+        />
         <Route path="game/:gameId" element={<GameDetails />} />
-        <Route path="profile" element={<ProfilePage logout={logout} />} />
+        <Route
+          path="profile"
+          element={
+            <>
+              <Header />
+              <ProfilePage logout={logout} />
+            </>
+          }
+        />
         <Route path="*" element={<ErrorPage type="404" />} />
       </Routes>
     </>

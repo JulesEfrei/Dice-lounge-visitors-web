@@ -52,7 +52,7 @@ function Menu() {
                 }}
               >
                 <div className={styles.img}>
-                  <img src={`/${elm.icon}`} alt={elm.name} />
+                  <img src={elm.icon} alt={elm.name} />
                 </div>
                 <p className={styles.text}>{elm.name}</p>
               </Link>
