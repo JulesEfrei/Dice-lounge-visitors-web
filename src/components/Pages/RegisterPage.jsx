@@ -17,6 +17,7 @@ function RegisterPage() {
   const [gender, setGender] = useState(0);
 
   const navigation = useNavigate();
+  const datePlaceholder = new Date();
 
   const formVerification = async (event) => {
     event.preventDefault();
@@ -71,7 +72,7 @@ function RegisterPage() {
   return (
     <>
       <div className={styles.imgContainer}>
-        <img src="./LOGO_Black.png" alt="Logo of Dice" />
+        <img src="/LOGO_Black.png" alt="Logo of Dice" />
       </div>
       <div className={styles.wrapper}>
         <h1 className={styles.title}>Create an account</h1>
@@ -116,6 +117,7 @@ function RegisterPage() {
               name: "birthday",
               type: "date",
               label: "Date of birth",
+              placeholder: "DD/MM/YYYY",
               ref: birthday,
             },
             {

@@ -1,36 +1,41 @@
 import React from "react";
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import styles from "./styles/gameDetails.module.scss";
 
 function GameDetails() {
   const navigate = useNavigate();
 
+  let { gameId } = useParams();
+
   return (
     <>
       <div className={styles.header}>
         <div className={styles.items} onClick={() => navigate(-1)}>
-          <img src="./Arrow.svg" alt="Arrow" />
+          <img src="/Arrow.svg" alt="Arrow" />
         </div>
         <div className={styles.items}>
-          <img src="./Save.svg" alt="Arrow" />
+          <img src="/Save.svg" alt="Arrow" />
         </div>
       </div>
       <div className={styles.gameImg}>
-        <div className={styles.img}></div>
+        <div
+          className={styles.img}
+          style={{ backgroundImage: `url("/Cover.png")` }}
+        ></div>
       </div>
       <div className={styles.mainContainer}>
         <h2>Age of Conan</h2>
         <div className={styles.tags}>
           <div className={styles.items}>
-            <img src="./Star.svg" alt="Star" />
+            <img src="/Star.svg" alt="Star" />
             <p>4.5</p>
           </div>
           <div className={styles.items}>
-            <img src="./Livre.svg" alt="Price" />
+            <img src="/Livre.svg" alt="Price" />
             <p>55,00</p>
           </div>
           <div className={styles.items}>
-            <img src="./Calendar.svg" alt="Calendar" />
+            <img src="/Calendar.svg" alt="Calendar" />
             <p>20 May 2008</p>
           </div>
         </div>

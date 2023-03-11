@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router";
 import AppNavigation from "./AppNavigation";
 import AuthNavigation from "./AuthNavigation";
 
@@ -7,13 +8,25 @@ function RootNavigation() {
     localStorage.getItem("userData") ? true : false
   );
 
+  const navigate = useNavigate();
+
   const login = () => {
     setIsConnected(true);
   };
-  const logout = () => setIsConnected(false);
+  const logout = () => {
+    setIsConnected(false);
+    localStorage.clear();
+    navigate("/login");
+  };
 
   return (
-    <>{isConnected ? <AppNavigation /> : <AuthNavigation login={login} />}</>
+    <>
+      {isConnected ? (
+        <AppNavigation logout={logout} />
+      ) : (
+        <AuthNavigation login={login} />
+      )}
+    </>
   );
 }
 

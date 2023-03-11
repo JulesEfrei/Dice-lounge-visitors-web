@@ -1,0 +1,27 @@
+@use "../../../utils/variables.scss";
+
+.container {
+  width: 100dvw;
+  height: 100dvh;
+  @include variables.flex();
+
+  .wrapper {
+    width: 100px;
+    height: 100px;
+    border-top: 3px solid variables.$primary-color;
+    border-bottom: 3px solid white;
+    border-left: 3px solid white;
+    border-right: 3px solid white;
+    border-radius: 50px;
+    animation: spin 1s infinite;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

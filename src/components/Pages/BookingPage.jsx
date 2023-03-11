@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import styles from "./styles/bookingPage.module.scss";
 import { BookingDate, BookingInfo, BookingCongrats } from "../Sections/";
 import { ToastContainer } from "react-toastify";
 import { generateToast } from "../../utils/formVarification";
@@ -63,10 +62,7 @@ function BookingPage() {
 
   return (
     <>
-      <header className={styles.header}>
-        <h2>Book a table</h2>
-      </header>
-      <section className={styles.section}>
+      <section>
         {step === 1 ? (
           <BookingDate
             goForward={goForward}

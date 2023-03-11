@@ -5,6 +5,7 @@ import RegisterPage from "./RegisterPage";
 import WelcomePage from "./WelcomePage";
 import BookingPage from "./BookingPage";
 import GameDetails from "./GameDetails";
+import ProfilePage from "./ProfilePage";
 
 export {
   HomePage,
@@ -14,4 +15,5 @@ export {
   WelcomePage,
   BookingPage,
   GameDetails,
+  ProfilePage,
 };

@@ -13,7 +13,7 @@ function AuthNavigation({ login }) {
       <Route index element={<WelcomePage router="auth" />} />
       <Route path="login" element={<LoginPage login={login} />} />
       <Route path="register" element={<RegisterPage />} />
-      <Route path="*" element={<ErrorPage />} />
+      <Route path="*" element={<ErrorPage type="400" />} />
     </Routes>
   );
 }
