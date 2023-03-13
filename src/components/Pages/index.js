@@ -6,6 +6,7 @@ import WelcomePage from "./WelcomePage";
 import BookingPage from "./BookingPage";
 import GameDetails from "./GameDetails";
 import ProfilePage from "./ProfilePage";
+import EventPage from "./EventPage";
 
 export {
   HomePage,
@@ -16,4 +17,5 @@ export {
   BookingPage,
   GameDetails,
   ProfilePage,
+  EventPage,
 };

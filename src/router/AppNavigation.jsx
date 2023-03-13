@@ -7,6 +7,7 @@ import {
   BookingPage,
   GameDetails,
   ProfilePage,
+  EventPage,
 } from "../components/Pages/";
 import { Header } from "../components/Sections/";
 
@@ -33,6 +34,15 @@ function AppNavigation({ logout }) {
             <>
               <Header />
               <BookingPage />
+            </>
+          }
+        />
+        <Route
+          path="events"
+          element={
+            <>
+              <Header />
+              <EventPage />
             </>
           }
         />
