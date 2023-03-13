@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import styles from "./styles/gameDetails.module.scss";
 import { ErrorPage } from "./";
