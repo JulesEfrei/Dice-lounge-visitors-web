@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import {
   HomePage,
@@ -17,7 +17,6 @@ function AppNavigation({ logout }) {
 
   return (
     <>
-      {/* {pathname !== "/" ? <Header /> : null} */}
       <Routes>
         <Route index element={<WelcomePage router="app" />} />
         <Route
