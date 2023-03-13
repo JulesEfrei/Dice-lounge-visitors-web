@@ -15,7 +15,6 @@ function EventPage() {
   if (error) return <ErrorPage type="505" />;
   if (isLoading) return <Loading />;
   if (!isLoading && data.error) return <ErrorPage type="404" />;
-  if (!isLoading) console.log(data.data);
   return (
     <>
       <div className={styles.mainContainer}>

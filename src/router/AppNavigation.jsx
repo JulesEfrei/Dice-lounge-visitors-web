@@ -8,6 +8,7 @@ import {
   GameDetails,
   ProfilePage,
   EventPage,
+  EventDetails,
 } from "../components/Pages/";
 import { Header } from "../components/Sections/";
 
@@ -43,6 +44,15 @@ function AppNavigation({ logout }) {
             <>
               <Header />
               <EventPage />
+            </>
+          }
+        />
+        <Route
+          path="events/:eventId"
+          element={
+            <>
+              <Header />
+              <EventDetails />
             </>
           }
         />
