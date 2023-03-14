@@ -76,7 +76,15 @@ function AppNavigation({ logout }) {
           }
         ></Route>
         <Route path="description" element={<ItemDescription />} />
-        <Route path="cart" element={<CartPage />} />
+        <Route
+          path="cart"
+          element={
+            <>
+              <Header />
+              <CartPage />
+            </>
+          }
+        />
         <Route path="*" element={<ErrorPage type="404" />} />
       </Routes>
     </>

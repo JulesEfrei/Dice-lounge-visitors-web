@@ -1,16 +1,20 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./styles/cartpage.module.scss";
+import { useNavigate } from "react-router";
 
 const CartPage = () => {
   const [count, setCount] = useState(0);
   const [coun, setCoun] = useState(0);
+
+  const navigate = useNavigate();
+
   return (
     <div>
       <button className={styles.back}>
-        <Link to="/">
+        <div onClick={() => navigate(-1)}>
           <img src="/back.svg" alt="" />
-        </Link>
+        </div>
       </button>
       <div className={styles.Item}>
         <div className={styles.cardcart}>
