@@ -75,7 +75,15 @@ function AppNavigation({ logout }) {
             </>
           }
         ></Route>
-        <Route path="description" element={<ItemDescription />} />
+        <Route
+          path="description"
+          element={
+            <>
+              <Header />
+              <ItemDescription />
+            </>
+          }
+        />
         <Route
           path="cart"
           element={

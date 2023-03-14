@@ -1,9 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./styles/foodCard.module.scss";
 
 function FoodCard({ el, i }) {
+  const navigate = useNavigate();
+
   return (
-    <div className={styles.cardContainer}>
+    <div
+      className={styles.cardContainer}
+      onClick={() => navigate("/description")}
+    >
       <div
         className={
           (i >= 6 ? i % 2 == 0 : i % 2 == 1)

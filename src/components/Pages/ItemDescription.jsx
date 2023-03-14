@@ -29,8 +29,7 @@ const ItemDescription = () => {
       <div className={styles.BasPage}>
         <button className={styles.note}>
           <img className={styles.star} src="/Star.svg" alt="" />
-          &ensp;
-          <p> 4.5</p>
+          <p>£ 4.5</p>
         </button>
         <div className={styles.cheese2}>
           <h3>Cheddars</h3>
@@ -49,7 +48,7 @@ const ItemDescription = () => {
         <p className={styles.Desc}>
           Lörem ipsum nikende sytijaskapet i kroren vuligen tinat. Neda
           pneumafiering bes. Spes vydehet. Berat on, iling, i terabel bejörade.
-          Seheten således.{" "}
+          Seheten således.
         </p>
         <h4>Adds on</h4>
         <CardItem />
