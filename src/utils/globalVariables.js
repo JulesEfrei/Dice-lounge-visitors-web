@@ -71,16 +71,19 @@ export const svgdice = [
     src: "/table.svg",
     name: "Book now",
     text: "Book the table of your choice for a better comfort",
+    link: "/booking",
   },
   {
     src: "/médaille.svg",
     name: "See more",
     text: "Become a premium member for only £25/year",
+    link: "https://diceboardgamelounge.com/rentals/",
   },
   {
     src: "/calendrier.svg",
     name: "See more",
     text: "upcoming events for you",
+    link: "/events",
   },
 ];
 

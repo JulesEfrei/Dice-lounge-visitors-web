@@ -12,10 +12,10 @@ import {
 const HomePage = () => {
   return (
     <div>
-      <div className={styles.truc}>
+      <div className={styles.mainCarrousel}>
         <Carrousel />
       </div>
-      <div>
+      <div className={styles.actionCarrousel}>
         <h2>The Dice</h2>
         <CarrouselDice />
       </div>

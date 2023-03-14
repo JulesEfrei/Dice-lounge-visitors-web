@@ -1,3 +1,17 @@
+@use "../../../utils/variables.scss";
+
+.mainCarrousel {
+  margin-top: 2rem;
+}
+
+.actionCarrousel {
+  margin: 2rem 0;
+
+  h2 {
+    margin-bottom: 1.5rem;
+  }
+}
+
 .Titrebas {
   display: flex;
   justify-content: center;
