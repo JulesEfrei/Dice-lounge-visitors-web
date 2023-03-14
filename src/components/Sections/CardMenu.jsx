@@ -9,30 +9,26 @@ function Card() {
 
   return (
     <div className={styles.All}>
-      <div>
-        <div className={styles.card__body}>
-          {imagescard.map((el, i) => {
-            return (
-              <div
-                onClick={() => navigate("/Menu")}
-                className={
-                  (i >= 6 ? i % 2 == 0 : i % 2 == 1)
-                    ? `${styles.cardmenu} ${styles.odd}`
-                    : `${styles.cardmenu} ${styles.even}`
-                }
-                key={el.id}
-              >
-                <Link to={el.link}>
-                  <img src={el.src} alt={el.name} />
-                </Link>
-                <div className={styles.menutext}>
-                  <p>{el.name}</p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
+      {imagescard.map((elm, index) => {
+        return (
+          <div
+            onClick={() => navigate("/Menu")}
+            className={
+              (index >= 6 ? index % 2 == 0 : index % 2 == 1)
+                ? `${styles.cardmenu} ${styles.odd}`
+                : `${styles.cardmenu} ${styles.even}`
+            }
+            key={elm.id}
+          >
+            <Link to={elm.link}>
+              <img src={elm.src} alt={elm.name} />
+            </Link>
+            <div className={styles.menutext}>
+              <p>{elm.name}</p>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }

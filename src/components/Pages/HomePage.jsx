@@ -16,15 +16,15 @@ const HomePage = () => {
         <Carrousel />
       </div>
       <div className={styles.actionCarrousel}>
-        <h2>The Dice</h2>
+        <h2 className={styles.title}>The Dice</h2>
         <CarrouselDice />
       </div>
       <div>
-        <h2>Come and enjoy the Dice</h2>
+        <h2 className={styles.title}>Come and enjoy the Dice</h2>
         <Carrousel2 />
       </div>
-      <div>
-        <h1 className={styles.Titrebas}>Menu</h1>
+      <div className={styles.cardMenu}>
+        <h1 className={styles.title}>Menu</h1>
         <CardMenu />
       </div>
       <div>
