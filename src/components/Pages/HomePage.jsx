@@ -31,7 +31,7 @@ const HomePage = () => {
         <h2 className={styles.Titrebas2}>Seasonal Specials</h2>
         <CardSeasonal />
       </div>
-      <div>
+      <div className={styles.cardPopular}>
         <h2 className={styles.Titrebas2}>Popular</h2>
         <CardPopular />
       </div>

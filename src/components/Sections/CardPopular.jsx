@@ -16,9 +16,9 @@ const CardPopular = () => {
             key={`${elm.name}-${index}`}
           >
             <img src={elm.src} alt={elm.name} />
-            <div>
-              <p className={styles.titrepopular}>{elm.name}</p>
-              <p>{elm.price}</p>
+            <div className={styles.textContainer}>
+              <p>{elm.name}</p>
+              <p className={styles.textBold}>£{elm.price}</p>
             </div>
           </div>
         );
