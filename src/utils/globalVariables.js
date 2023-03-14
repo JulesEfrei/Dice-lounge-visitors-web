@@ -32,37 +32,37 @@ export const imagescard = [
     id: 1,
     src: "/bretzel.svg",
     name: "Snack Bar",
-    link: "/Menu",
+    link: "/menu/snack-bar",
   },
   {
     id: 2,
     src: "/salade.svg",
     name: "Salads",
-    link: "/Salads",
+    link: "/menu/salad",
   },
   {
     id: 3,
     src: "/sandwiches.svg",
     name: "Sandwiches",
-    link: "/Sandwichs",
+    link: "/menu/sandwiches",
   },
   {
     id: 4,
     src: "/board.svg",
     name: "Board",
-    link: "/Board",
+    link: "/menu/board",
   },
   {
     id: 5,
     src: "/sweets.svg",
     name: "Sweets",
-    link: "/Sweet",
+    link: "/menu/sweet",
   },
   {
     id: 6,
     src: "/drinks.svg",
     name: "Drinks",
-    link: "/Drinks",
+    link: "/menu/drinks",
   },
 ];
 
@@ -100,7 +100,7 @@ export const svgpopular = [
   },
 ];
 
-export const svgsnackbar = [
+export const SnackBar = [
   {
     src: "/bretzel.svg",
     name: "Pretzels",
@@ -143,14 +143,14 @@ export const svgitem = [
     src: "/cheese2.svg",
   },
   {
-    src: "src/assets/coca.svg",
+    src: "/coca.svg",
   },
   {
     src: "/frite.svg",
   },
 ];
 
-export const svgsalads = [
+export const Salad = [
   {
     name: "Turkey Cesar",
     src: "/Cesar.svg",
@@ -165,7 +165,7 @@ export const svgsalads = [
   },
 ];
 
-export const svgsandwichs = [
+export const Sandwiches = [
   {
     src: "/burgerpesto.svg",
     name: "Turkey Pesto",
@@ -198,7 +198,7 @@ export const svgsandwichs = [
   },
 ];
 
-export const svgboard = [
+export const Board = [
   {
     src: "/charcuterie.svg",
     name: "Charcuterie",
@@ -216,7 +216,7 @@ export const svgboard = [
   },
 ];
 
-export const svgdrinks = [
+export const Drinks = [
   {
     src: "/coca.svg",
     name: "Coke",
@@ -264,7 +264,7 @@ export const svgdrinks = [
   },
 ];
 
-export const svgsweet = [
+export const Sweet = [
   {
     src: "/charcuterie.svg",
     name: "Raspberry Croissant",

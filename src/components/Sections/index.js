@@ -14,11 +14,6 @@ import Carrousel from "./Carrousel";
 import Carrousel2 from "./Carrousel2";
 import CarrouselDice from "./CarrouselDice";
 import Filter from "./Filter";
-import MenuBoard from "./MenuBoard";
-import MenuDrinks from "./MenuDrinks";
-import MenuSweet from "./MenuSweet";
-import Salads from "./Salads";
-import Sandwichs from "./Sandwichs";
 
 export {
   Menu,
@@ -37,9 +32,4 @@ export {
   Carrousel2,
   CarrouselDice,
   Filter,
-  MenuBoard,
-  MenuDrinks,
-  MenuSweet,
-  Salads,
-  Sandwichs,
 };

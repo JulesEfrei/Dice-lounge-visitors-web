@@ -2,17 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./styles/cardmenu.module.scss";
 import { imagescard } from "../../utils/globalVariables";
-import { useNavigate } from "react-router-dom";
 
 function Card() {
-  const navigate = useNavigate();
-
   return (
     <div className={styles.All}>
       {imagescard.map((elm, index) => {
         return (
           <div
-            onClick={() => navigate("/Menu")}
             className={
               (index >= 6 ? index % 2 == 0 : index % 2 == 1)
                 ? `${styles.cardmenu} ${styles.odd}`

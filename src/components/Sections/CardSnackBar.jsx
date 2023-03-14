@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./styles/cardsnackbar.module.scss";
-import { svgsnackbar } from "../../utils/globalVariables";
 
 const CardSnackBar = () => {
   return (
