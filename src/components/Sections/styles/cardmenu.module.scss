@@ -1,0 +1,44 @@
+@use "../../../utils/variables.scss";
+
+.All {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  row-gap: 20px;
+  column-gap: 20px;
+  width: 80%;
+
+  .cardmenu {
+    width: 5.5rem;
+    height: 7rem;
+
+    .menutext {
+      margin-top: 10px;
+      text-align: center;
+      width: 100%;
+    }
+
+    img {
+      box-shadow: 0 5px rgba(0, 0, 0, 0.1);
+      width: 5rem;
+      height: 5rem;
+      padding: 7px;
+      border-radius: 16px;
+    }
+
+    p {
+      font-family: sans-serif;
+    }
+  }
+
+  .odd {
+    img {
+      background-color: variables.$primary-color;
+    }
+  }
+  .even {
+    img {
+      background-color: variables.$secondary-color;
+    }
+  }
+}

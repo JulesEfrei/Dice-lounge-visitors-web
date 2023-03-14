@@ -1,0 +1,36 @@
+@use "../../../utils/variables.scss";
+
+.background {
+  @include variables.flex(row, space-around, center);
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+
+  .cardpopular {
+    box-shadow: 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 19px;
+    min-height: 12rem;
+    width: 9rem;
+    @include variables.flex(column, center, center);
+
+    .textContainer {
+      margin-top: 1rem;
+    }
+
+    .textBold {
+      font-weight: bold;
+    }
+
+    img {
+      height: 5.5rem;
+    }
+  }
+
+  .odd {
+    background-color: variables.$primary-color;
+  }
+
+  .even {
+    background-color: variables.$secondary-color;
+  }
+}

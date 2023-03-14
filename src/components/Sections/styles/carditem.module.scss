@@ -1,0 +1,20 @@
+.adds{
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    .carditem{
+        background-color: #EEEE;
+        border-radius: 8px;
+        width: 5rem;
+        height: 5rem;
+        .products{
+            width: 5rem;
+            height: 5rem;
+        }
+    }
+    .plus{
+        display: flex;
+        justify-content: end;
+        transform: translate(0, -15px);
+    }
+}

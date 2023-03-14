@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import {
   HomePage,
   ErrorPage,
@@ -9,12 +9,13 @@ import {
   ProfilePage,
   EventPage,
   EventDetails,
+  Menu,
+  ItemDescription,
+  CartPage,
 } from "../components/Pages/";
 import { Header } from "../components/Sections/";
 
 function AppNavigation({ logout }) {
-  const { pathname } = useLocation();
-
   return (
     <>
       <Routes>
@@ -62,6 +63,33 @@ function AppNavigation({ logout }) {
             <>
               <Header />
               <ProfilePage logout={logout} />
+            </>
+          }
+        />
+        <Route
+          path="menu/:category"
+          element={
+            <>
+              <Header />
+              <Menu />
+            </>
+          }
+        ></Route>
+        <Route
+          path="description"
+          element={
+            <>
+              <Header />
+              <ItemDescription />
+            </>
+          }
+        />
+        <Route
+          path="cart"
+          element={
+            <>
+              <Header />
+              <CartPage />
             </>
           }
         />
