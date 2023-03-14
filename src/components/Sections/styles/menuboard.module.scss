@@ -1,0 +1,85 @@
+.Board {
+    
+
+    .agencement {
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        margin-left: 20px;
+
+        .cardsnack {
+
+            width: 80px;
+            height: 160px;
+            border-radius: 16px;
+            margin-bottom: 40px;
+
+            .background {
+                box-shadow: 0 5px rgba(0, 0, 0, 0.1);
+                width: 100%;
+                height: 80px;
+                padding: 0;
+
+            }
+
+            .odd {
+                background-color: #0E3C52;
+            }
+
+            .even {
+                background-color: #D29628;
+            }
+
+            img {
+                width: 4.5rem;
+                height: 4.5rem;
+                padding-top: 4px;
+            }
+
+            .plus {
+                display: flex;
+                justify-content: end;
+                transform: translate(0, -15px);
+
+                button {
+                    border-radius: 20px;
+                    border: none;
+                    width: 20px;
+                    aspect-ratio: 1/1;
+                    padding: 0 0;
+                    color: rgba(255, 255, 255);
+                    font-weight: 500;
+                    font-size: large;
+                }
+            }
+
+            p {
+                margin-top: .7rem;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 0.90rem;
+                height: 32px;
+                font-weight: 500;
+                display: flex;
+                justify-content: center;
+            }
+
+            .textsnack {
+                color: #626C23;
+                font-weight: 600;
+                margin-bottom: 4px;
+            }
+        }
+
+        .cardboard_body {
+            display: grid;
+            margin-left: 20px;
+            gap: 30px;
+            margin-top: 10px;
+        }
+    }
+
+    .desc{
+        margin-top: 30px;
+    
+    }
+}

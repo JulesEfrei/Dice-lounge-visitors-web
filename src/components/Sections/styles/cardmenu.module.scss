@@ -1,0 +1,44 @@
+.All {
+ position: relative;
+  display: grid;
+ 
+  text-align: center;
+  .cardmenu {
+    margin-top: 15px;
+    justify-content: space-between;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 16px;
+    box-shadow: 0 5px rgba(0, 0, 0, 0.1);
+
+    .menutext{
+      margin-top: -10px
+    }
+
+    img {
+      width: 4.5rem;
+      height: 4.5rem;
+
+    }
+
+    p {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1rem;
+      font-weight:300;
+    }
+  }
+  .card__body {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: auto auto auto ;
+  }
+  .odd {
+    background-color: #0E3C52;
+  }
+  .even{
+    background-color: #D29628;
+  }
+}

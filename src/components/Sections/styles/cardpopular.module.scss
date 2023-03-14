@@ -1,0 +1,51 @@
+.background {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    border-radius: 19px;
+    padding: 5px;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height: 10rem;
+
+
+
+    .odd {
+        box-shadow: 0 5px rgba(0, 0, 0, 0.1);
+        background-color: #0E3C52;
+        border-radius: 19px;
+        height: 10rem;
+    }
+
+    .even {
+        border-radius: 19px;
+        box-shadow: 0 5px rgba(0, 0, 0, 0.1);
+        background-color: #D29628;
+    }
+
+    img {
+        padding-top: 1rem;
+        max-width: 9rem;
+        max-height: 9rem;
+        border-radius: 19px;
+        height: 100px;
+        width: 144px;
+        object-fit: fill;
+    }
+
+    .titrepopular {
+        color: white;
+        margin-top: -1rem;
+        font-size: large;
+        font-weight: lighter;
+        text-align: center;
+    }
+
+    p {
+        font-size: large;
+        margin-top: -1rem;
+        font-weight: bolder;
+        text-align: center;
+        
+    }
+}

@@ -1,0 +1,48 @@
+.allcard {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    gap: 10px;
+    justify-content: space-between;
+    margin: 5px;
+    gap: 5px;
+    .anothercard {
+        background: linear-gradient(#0E3C52, #475646, #D29628);
+        border-radius: 10px;
+        .carddice {
+            display: flex;
+            justify-content: center;
+            border-radius: 10px;
+            height: 9rem;
+            width: 15rem;
+            justify-content: space-around;
+            
+            h3{
+                color: white;
+                margin-left: 5px;
+                text-align: center;
+                margin-top: 8px;
+               margin-bottom: 2px; 
+            }
+            .align{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+           img{
+            width: 5rem;
+           }
+           
+        }
+        button{
+            border-radius:12px;
+            border: none;
+            color: #D29628 ;
+            padding: 4px;
+            box-shadow:  0 9px 5px rgba(0, 0, 0, 0.1);
+            
+        }
+    }
+
+}

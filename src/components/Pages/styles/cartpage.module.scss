@@ -1,0 +1,99 @@
+.back{
+    background-color: #0E3C52;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+
+.Item{
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    margin: 20px;
+    .cardcart{
+        background: linear-gradient( #0E3C52 , #475646, #D29628 );
+        border-radius: 19px;
+        img{
+            margin-top: 15px;
+        }
+    }
+    .center{
+        margin-left: -90px;
+        .Name{
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bolder;
+            font-size: larger;
+        }
+        .Price{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: larger;
+            font-weight:bolder;
+            color: #D29628;
+        }
+    }
+    .compteur{
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        justify-content: center;
+        p{
+            margin-top: -0.5px;
+            font-size: large;
+        }
+    }
+    .delete{
+        margin-top: -70px;
+    }
+}
+.order{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+    margin-top: 80px;
+
+    input{
+        border: 0.5px;
+        border-color: black;
+        box-shadow: 0px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        width: 20rem;
+        height: 5rem;
+    }
+}
+
+.total{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    p{
+        color: #D29628;
+        font-size: large;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}
+
+.boutons{
+    display: grid;
+    grid-template-columns: auto;
+    gap: 30px;
+    margin: 40px;
+    margin-left: 70px ;
+    margin-right: 70px ;
+    .checkout{
+        padding-left: 4rem;
+        padding-right: 4rem;
+        background-color: #0E3C52;
+        border: none;
+        height: 2rem;
+        border-radius: 8px;
+        font-size: large;
+        color: white;
+    }
+    .back{
+        font-size: large;
+        border: none;
+        background-color: white;
+        border-radius: 8px;
+        margin-left: 80px;
+    }
+}

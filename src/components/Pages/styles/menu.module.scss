@@ -1,0 +1,20 @@
+.Menu {
+    .topMenu {
+        display: flex;
+        justify-content: space-between;
+        button {
+            margin-top: 1rem;
+            background-color: #0E3C52;
+            border: none;
+            img{
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+        }
+
+    }
+    h1{
+        display: flex;
+        justify-content: center;
+    }
+}

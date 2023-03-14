@@ -1,0 +1,22 @@
+.topMenu {
+    background-color: #0E3C52;
+    display: flex;
+    justify-content: space-between;
+
+    .back {
+        margin-top: 1rem;
+        background-color: transparent;
+        border: none;
+
+        img {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+        
+    }
+    .kart{
+        margin-top: 1rem;
+        background-color: transparent;
+        border: none;
+    }
+}

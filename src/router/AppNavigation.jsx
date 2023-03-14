@@ -9,6 +9,14 @@ import {
   ProfilePage,
   EventPage,
   EventDetails,
+  Menu,
+  ItemDescription,
+  MenuSalads,
+  MenuSandwich,
+  Board,
+  Drinks,
+  Sweet,
+  CartPage,
 } from "../components/Pages/";
 import { Header } from "../components/Sections/";
 
@@ -65,6 +73,14 @@ function AppNavigation({ logout }) {
             </>
           }
         />
+        <Route path="Menu" element={<Menu />}></Route>
+        <Route path="Description" element={<ItemDescription />} />
+        <Route path="Salads" element={<MenuSalads />} />
+        <Route path="Sandwichs" element={<MenuSandwich />} />
+        <Route path="Board" element={<Board />} />
+        <Route path="Drinks" element={<Drinks />} />
+        <Route path="Sweet" element={<Sweet />} />
+        <Route path="Cart" element={<CartPage />} />
         <Route path="*" element={<ErrorPage type="404" />} />
       </Routes>
     </>

@@ -1,0 +1,121 @@
+.Page {
+    background: linear-gradient(#0E3C52, #475646, #D29628);
+    padding-bottom: 10rem;
+    .topMenu {
+        background-color: #0E3C52;
+        display: flex;
+        justify-content: space-between;
+
+        .back {
+            margin-top: 1rem;
+            background-color: transparent;
+            border: none;
+
+            img {
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+            
+        }
+        .kart{
+            margin-top: 1rem;
+            background-color: transparent;
+            border: none;
+        }
+    }
+
+    .Item {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        padding-bottom: 3rem;
+        .dot{
+            height: 17rem;
+            width: 17rem;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            opacity: 0.2;
+            position: absolute;
+        }
+        .cheese{
+            width: 17rem;
+            height: 17rem;
+            
+        }
+    }
+}
+.BasPage{
+    background-color: white;
+    width: 100vw;
+    border-radius: 25px;
+    transform: translate(0, -10rem);
+    padding-top: 3rem;
+    .note{
+        display: flex;
+        align-items: center;
+        background-color: #0E3C52;
+        border-radius: 20px;
+        height: 2rem;
+        border: none;
+        margin-left: 20px;
+        .star{
+            width: 1rem;
+        }
+        p{
+            font-weight: 600;
+            color: white;
+        }
+    }
+    .cheese2{
+        display: flex;
+        justify-content: space-between;
+        margin-left: 20px;
+        margin-right: 20px;
+        .count{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            p{
+                font-size:larger;
+                font-weight: 600;
+                color: #0E3C52;
+                text-align: center;
+            }
+    
+        }
+
+    }
+    .Desc{
+        text-align: start;
+        opacity: 0.4;
+        inline-size: 400px;
+        margin: 20px;
+        overflow-wrap: break-word;
+    }
+    h4{
+        margin-left:20px ;
+    }
+    .btncart{
+        display: flex;
+        justify-content: center;
+        margin-top: 5rem;
+        button{
+            padding-left:3rem ;
+            padding-right: 3rem;
+            width: 15rem;
+            font-size: larger;
+            box-shadow: 0 5px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            border: none;
+            background-color: #0E3C52;
+            color: white;
+            padding: 5px;
+        }
+    }
+}

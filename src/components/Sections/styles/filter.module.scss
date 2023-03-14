@@ -1,0 +1,30 @@
+.filtercard {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+
+    .cardfilter {
+            display: grid;
+            justify-content: center;
+            text-align: center;
+            background-color: #0E3C52;
+            border-radius: 15px;
+            width: 5rem;
+            height: 5rem;
+        img {
+            padding-top: 7px;
+            width: 2rem;
+            height: 2.2rem;
+        }
+
+        p {
+            margin-top: -2px;
+            font-size: small;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 2px;
+            bottom: 0;
+        }
+    }
+}
