@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./styles/profilePage.module.scss";
 import QRCode from "react-qr-code";
 import { Link } from "react-router-dom";
@@ -8,6 +8,7 @@ import { ErrorPage } from "../Pages/";
 import generateAvatar from "../../utils/avatar";
 
 function ProfilePage({ logout }) {
+  const [avatar, setAvatar] = useState(null);
   const user = JSON.parse(localStorage.getItem("userData"));
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
@@ -17,22 +18,27 @@ function ProfilePage({ logout }) {
     fetcher
   );
 
-  let avatar;
-
-  if (!isLoading && data) {
-    avatar = generateAvatar(
+  const updateAvatar = () => {
+    return generateAvatar(
+      user.userName,
       "adventurer",
       data.user.gender === "Male" ? "Male" : "Female"
     );
-    console.log(avatar);
-  }
+  };
 
   if (error) return <ErrorPage type="505" />;
   if (isLoading) return <Loading />;
   return (
     <>
-      <div className={styles.userMainContainer}>
-        <img src={avatar} alt="Profile picture" className={styles.img} />
+      <div
+        className={styles.userMainContainer}
+        onClick={() => setAvatar(updateAvatar)}
+      >
+        <img
+          src={avatar ? avatar : updateAvatar()}
+          alt="Profile picture"
+          className={styles.img}
+        />
         <p>@{data.user.userName}</p>
         <h2>{data.user.firstName}</h2>
       </div>
