@@ -1,0 +1,63 @@
+@use "../../../utils/variables.scss";
+
+.cardContainer {
+  border-radius: 16px;
+  width: 5.5rem;
+  position: relative;
+
+  .background {
+    border-radius: 16px;
+    box-shadow: 0 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 5px;
+  }
+
+  .odd {
+    background-color: variables.$primary-color;
+  }
+
+  .even {
+    background-color: variables.$secondary-color;
+  }
+
+  img {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .plus {
+    position: absolute;
+    right: 0;
+    transform: translate(0, -15px);
+
+    button {
+      border-radius: 50px;
+      border: none;
+      width: 25px;
+      height: 25px;
+      color: white;
+      line-height: 1;
+      font-size: 17px;
+    }
+  }
+
+  .textContainer {
+    width: 100%;
+    @include variables.flex(column);
+  }
+
+  p {
+    font-family: sans-serif;
+    text-align: center;
+  }
+
+  .foodName {
+    margin-top: 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  .price {
+    color: #626c23;
+    font-weight: 600;
+  }
+}

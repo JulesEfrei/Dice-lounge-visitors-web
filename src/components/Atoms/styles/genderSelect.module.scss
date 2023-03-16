@@ -1,0 +1,40 @@
+@use "../../../utils/variables.scss";
+
+.container {
+  width: 100%;
+
+  .label {
+    font-size: 14px;
+    color: black;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+    font-family: sans-serif;
+  }
+
+  .wrapper {
+    position: relative;
+    @include variables.flex(row, space-between, center);
+    background-color: variables.$secondary-color;
+    border-radius: 50px;
+
+    .items {
+      padding: 3px 15px;
+      z-index: 10;
+      color: white;
+      font-family: sans-serif;
+      width: calc(100% / 3);
+      text-align: center;
+    }
+
+    .background {
+      position: absolute;
+      background-color: variables.$primary-color;
+      width: calc(100% / 3);
+      height: 100%;
+      z-index: 1;
+      border-radius: 50px;
+      transition: transform 0.2s ease-out;
+    }
+  }
+}

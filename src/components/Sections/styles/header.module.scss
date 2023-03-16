@@ -1,0 +1,23 @@
+@use "../../../utils/variables.scss";
+
+.header {
+  @include variables.flex();
+  background-color: variables.$primary-color;
+  height: auto;
+  position: sticky;
+  width: 100dvw;
+  top: 0;
+  left: 0;
+  padding: 25px 0 10px 0;
+  z-index: 1000;
+
+  h2 {
+    font-family: variables.$primary-font;
+    color: white;
+  }
+
+  .imgContainer {
+    width: 55px;
+    height: 45px;
+  }
+}

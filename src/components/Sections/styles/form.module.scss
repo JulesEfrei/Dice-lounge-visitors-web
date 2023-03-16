@@ -1,0 +1,47 @@
+@use "../../../utils/variables.scss";
+
+.container {
+  width: 100%;
+  form {
+    @include variables.flex(column, flex-start, center);
+    width: 100%;
+    row-gap: 1rem;
+
+    .wrapper {
+      width: 90%;
+    }
+
+    .button {
+      margin-top: 1.5rem;
+      background-color: variables.$primary-color;
+      border: none;
+      font-family: variables.$primary-font;
+      font-size: 16px;
+      letter-spacing: 1px;
+      padding: 10px 10px;
+      width: 75%;
+      border-radius: 10px;
+    }
+  }
+
+  .link {
+    font-family: sans-serif;
+    font-size: 14px;
+  }
+
+  .radio {
+    width: 90%;
+    margin-top: 0.5rem;
+    @include variables.flex(row, flex-start, center);
+
+    input {
+      background-color: white;
+      margin-right: 1rem;
+    }
+
+    label {
+      font-family: sans-serif;
+      font-size: 14px;
+    }
+  }
+}

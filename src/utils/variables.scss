@@ -1,0 +1,19 @@
+// Variables
+
+$primary-color: #0e3c52;
+$secondary-color: #d29628;
+$info-color: #007ea7;
+$danger-color: #c33149;
+$success-color: #0aaf41;
+$creme-color: #f5efe8;
+$gray-color: #0e3d529c;
+
+$primary-font: "Liberator";
+
+// Mixin
+@mixin flex($direction: row, $jutify-content: center, $align-items: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $jutify-content;
+  align-items: $align-items;
+}

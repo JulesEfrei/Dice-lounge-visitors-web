@@ -1,0 +1,38 @@
+@use "../../../utils/variables.scss";
+
+.mainCarrousel {
+  margin-top: 2rem;
+}
+
+.actionCarrousel {
+  margin: 2rem 0;
+}
+
+.title {
+  margin-bottom: 1.5rem;
+}
+
+.cardMenu {
+  margin: 2rem 0;
+  @include variables.flex(column);
+}
+
+.Titrebas2 {
+  display: flex;
+  justify-content: start;
+  margin-left: 2rem;
+  color: black;
+  margin-bottom: 3rem;
+  margin-top: 50px;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  color: variables.$secondary-color;
+  text-shadow: 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.cardPopular {
+  margin-bottom: 3rem;
+}

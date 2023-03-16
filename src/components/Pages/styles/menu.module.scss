@@ -1,0 +1,31 @@
+@use "../../../utils/variables.scss";
+
+.Menu {
+  .topMenu {
+    @include variables.flex(row, space-between, center);
+
+    .button {
+      margin: 20px;
+      border: none;
+      img {
+        width: 1.5rem;
+        height: 1.5rem;
+        filter: brightness(0) saturate(100%) invert(18%) sepia(10%)
+          saturate(4660%) hue-rotate(158deg) brightness(95%) contrast(91%);
+      }
+    }
+  }
+}
+
+.foodWrapper {
+  @include variables.flex(column);
+  .container {
+    margin-top: 2rem;
+    width: 80%;
+    // @include variables.flex(row, space-between, flex-start);
+    // flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 20px;
+  }
+}

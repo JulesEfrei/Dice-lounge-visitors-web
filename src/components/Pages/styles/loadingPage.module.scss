@@ -1,0 +1,21 @@
+@use "../../../utils/variables.scss";
+
+.imgContainer {
+  position: relative;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 75px;
+}
+
+.wrapper {
+  @include variables.flex(column, center, flex-start);
+  height: 94vh;
+
+  .title {
+    font-family: variables.$primary-font;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    color: variables.$primary-color;
+  }
+}

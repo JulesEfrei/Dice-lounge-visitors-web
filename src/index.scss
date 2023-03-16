@@ -1,7 +1,9 @@
 :root {
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  // color: rgba(255, 255, 255, 0.87);
+  // background-color: #242424;
+  background-color: white;
+  color: black;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -30,6 +32,7 @@ body {
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 img,
@@ -65,6 +68,19 @@ textarea:focus {
 
 a:hover {
   text-decoration: none;
+}
+
+@font-face {
+  font-family: "Liberator";
+  src: local(""), url("./assets/fonts/Liberator.ttf") format("truetype"),
+    url("./assets/fonts/Liberator.otf") format("opentype"),
+    url("https://diceboardgamelounge.com/wp-content/uploads/elegant-custom-fonts/liberator.woff")
+      format("woff");
+}
+
+h1,
+h2 {
+  font-family: "Liberator", sans-serif;
 }
 
 @media (prefers-color-scheme: light) {

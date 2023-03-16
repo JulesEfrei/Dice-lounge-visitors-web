@@ -1,0 +1,24 @@
+@use "../../../utils/variables.scss";
+
+.container {
+  @include variables.flex(column, center, center);
+  width: 100%;
+  height: 80vh;
+
+  .img {
+    margin-bottom: 2rem;
+  }
+
+  .title {
+    color: variables.$primary-color;
+    font-family: variables.$primary-font;
+    margin-bottom: 1rem;
+  }
+
+  .text {
+    color: variables.$primary-color;
+    font-family: sans-serif;
+    width: 90%;
+    text-align: center;
+  }
+}
